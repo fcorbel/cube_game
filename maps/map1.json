@@ -1,0 +1,6315 @@
+{
+    "living": [
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "averageGuy",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "conversation": [
+                    {
+                        "content": "Hi mate!",
+                        "type": "say"
+                    },
+                    {
+                        "content": "Let's go!",
+                        "type": "say"
+                    },
+                    {
+                        "type": "do"
+                    }
+                ],
+                "movement": {
+                    "isMoving": false
+                },
+                "position": {
+                    "abs": [
+                        100,
+                        175,
+                        0
+                    ],
+                    "vox": [
+                        1,
+                        2,
+                        0
+                    ]
+                },
+                "size": {
+                    "0": 1,
+                    "1": 4,
+                    "2": 1
+                },
+                "weight": 60
+            },
+            "name": "averageGuy",
+            "sys": [
+                "storedInZoneContainer",
+                "drawEntity",
+                "walk",
+                "talk",
+                "aiControled"
+            ],
+            "type": "living"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "averageGuy",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "movement": {
+                    "isMoving": false
+                },
+                "position": {
+                    "abs": [
+                        200,
+                        225,
+                        0
+                    ],
+                    "vox": [
+                        2,
+                        3,
+                        0
+                    ]
+                },
+                "size": {
+                    "0": 1,
+                    "1": 4,
+                    "2": 1
+                },
+                "weight": 60
+            },
+            "name": "averageGuy",
+            "sys": [
+                "storedInZoneContainer",
+                "drawEntity",
+                "walk",
+                "talk",
+                "aiControled"
+            ],
+            "type": "living"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "averageGuy",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "movement": {
+                    "isMoving": false
+                },
+                "position": {
+                    "abs": [
+                        300,
+                        275,
+                        0
+                    ],
+                    "vox": [
+                        3,
+                        4,
+                        0
+                    ]
+                },
+                "size": {
+                    "0": 1,
+                    "1": 4,
+                    "2": 1
+                },
+                "weight": 60
+            },
+            "name": "averageGuy",
+            "sys": [
+                "storedInZoneContainer",
+                "drawEntity",
+                "walk",
+                "talk",
+                "aiControled"
+            ],
+            "type": "living"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "averageGuy",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "movement": {
+                    "isMoving": false
+                },
+                "position": {
+                    "abs": [
+                        400,
+                        325,
+                        0
+                    ],
+                    "vox": [
+                        4,
+                        5,
+                        0
+                    ]
+                },
+                "size": {
+                    "0": 1,
+                    "1": 4,
+                    "2": 1
+                },
+                "weight": 60
+            },
+            "name": "averageGuy",
+            "sys": [
+                "storedInZoneContainer",
+                "drawEntity",
+                "walk",
+                "talk",
+                "aiControled"
+            ],
+            "type": "living"
+        }
+    ],
+    "sizeX": 10,
+    "sizeY": 20,
+    "sizeZ": 6,
+    "terrain": [
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "vox": [
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        100,
+                        0,
+                        0
+                    ],
+                    "vox": [
+                        1,
+                        0,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        200,
+                        0,
+                        0
+                    ],
+                    "vox": [
+                        2,
+                        0,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        300,
+                        0,
+                        0
+                    ],
+                    "vox": [
+                        3,
+                        0,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        400,
+                        0,
+                        0
+                    ],
+                    "vox": [
+                        4,
+                        0,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        500,
+                        0,
+                        0
+                    ],
+                    "vox": [
+                        5,
+                        0,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        600,
+                        0,
+                        0
+                    ],
+                    "vox": [
+                        6,
+                        0,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        700,
+                        0,
+                        0
+                    ],
+                    "vox": [
+                        7,
+                        0,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        800,
+                        0,
+                        0
+                    ],
+                    "vox": [
+                        8,
+                        0,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        900,
+                        0,
+                        0
+                    ],
+                    "vox": [
+                        9,
+                        0,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        0,
+                        0,
+                        100
+                    ],
+                    "vox": [
+                        0,
+                        0,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        100,
+                        0,
+                        100
+                    ],
+                    "vox": [
+                        1,
+                        0,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        200,
+                        0,
+                        100
+                    ],
+                    "vox": [
+                        2,
+                        0,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        300,
+                        0,
+                        100
+                    ],
+                    "vox": [
+                        3,
+                        0,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        400,
+                        0,
+                        100
+                    ],
+                    "vox": [
+                        4,
+                        0,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        500,
+                        0,
+                        100
+                    ],
+                    "vox": [
+                        5,
+                        0,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        600,
+                        0,
+                        100
+                    ],
+                    "vox": [
+                        6,
+                        0,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        700,
+                        0,
+                        100
+                    ],
+                    "vox": [
+                        7,
+                        0,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        800,
+                        0,
+                        100
+                    ],
+                    "vox": [
+                        8,
+                        0,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        900,
+                        0,
+                        100
+                    ],
+                    "vox": [
+                        9,
+                        0,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        0,
+                        0,
+                        200
+                    ],
+                    "vox": [
+                        0,
+                        0,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        100,
+                        0,
+                        200
+                    ],
+                    "vox": [
+                        1,
+                        0,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        200,
+                        0,
+                        200
+                    ],
+                    "vox": [
+                        2,
+                        0,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        300,
+                        0,
+                        200
+                    ],
+                    "vox": [
+                        3,
+                        0,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        400,
+                        0,
+                        200
+                    ],
+                    "vox": [
+                        4,
+                        0,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        500,
+                        0,
+                        200
+                    ],
+                    "vox": [
+                        5,
+                        0,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        600,
+                        0,
+                        200
+                    ],
+                    "vox": [
+                        6,
+                        0,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        700,
+                        0,
+                        200
+                    ],
+                    "vox": [
+                        7,
+                        0,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        800,
+                        0,
+                        200
+                    ],
+                    "vox": [
+                        8,
+                        0,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        900,
+                        0,
+                        200
+                    ],
+                    "vox": [
+                        9,
+                        0,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        0,
+                        0,
+                        300
+                    ],
+                    "vox": [
+                        0,
+                        0,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        100,
+                        0,
+                        300
+                    ],
+                    "vox": [
+                        1,
+                        0,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        200,
+                        0,
+                        300
+                    ],
+                    "vox": [
+                        2,
+                        0,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        300,
+                        0,
+                        300
+                    ],
+                    "vox": [
+                        3,
+                        0,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        400,
+                        0,
+                        300
+                    ],
+                    "vox": [
+                        4,
+                        0,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        500,
+                        0,
+                        300
+                    ],
+                    "vox": [
+                        5,
+                        0,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        600,
+                        0,
+                        300
+                    ],
+                    "vox": [
+                        6,
+                        0,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        700,
+                        0,
+                        300
+                    ],
+                    "vox": [
+                        7,
+                        0,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        800,
+                        0,
+                        300
+                    ],
+                    "vox": [
+                        8,
+                        0,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        900,
+                        0,
+                        300
+                    ],
+                    "vox": [
+                        9,
+                        0,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        0,
+                        0,
+                        400
+                    ],
+                    "vox": [
+                        0,
+                        0,
+                        4
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        100,
+                        0,
+                        400
+                    ],
+                    "vox": [
+                        1,
+                        0,
+                        4
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        200,
+                        0,
+                        400
+                    ],
+                    "vox": [
+                        2,
+                        0,
+                        4
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        300,
+                        0,
+                        400
+                    ],
+                    "vox": [
+                        3,
+                        0,
+                        4
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        400,
+                        0,
+                        400
+                    ],
+                    "vox": [
+                        4,
+                        0,
+                        4
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        500,
+                        0,
+                        400
+                    ],
+                    "vox": [
+                        5,
+                        0,
+                        4
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        600,
+                        0,
+                        400
+                    ],
+                    "vox": [
+                        6,
+                        0,
+                        4
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        700,
+                        0,
+                        400
+                    ],
+                    "vox": [
+                        7,
+                        0,
+                        4
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        800,
+                        0,
+                        400
+                    ],
+                    "vox": [
+                        8,
+                        0,
+                        4
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        900,
+                        0,
+                        400
+                    ],
+                    "vox": [
+                        9,
+                        0,
+                        4
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        0,
+                        0,
+                        500
+                    ],
+                    "vox": [
+                        0,
+                        0,
+                        5
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        100,
+                        0,
+                        500
+                    ],
+                    "vox": [
+                        1,
+                        0,
+                        5
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        200,
+                        0,
+                        500
+                    ],
+                    "vox": [
+                        2,
+                        0,
+                        5
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        300,
+                        0,
+                        500
+                    ],
+                    "vox": [
+                        3,
+                        0,
+                        5
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        400,
+                        0,
+                        500
+                    ],
+                    "vox": [
+                        4,
+                        0,
+                        5
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        500,
+                        0,
+                        500
+                    ],
+                    "vox": [
+                        5,
+                        0,
+                        5
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        600,
+                        0,
+                        500
+                    ],
+                    "vox": [
+                        6,
+                        0,
+                        5
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        700,
+                        0,
+                        500
+                    ],
+                    "vox": [
+                        7,
+                        0,
+                        5
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        800,
+                        0,
+                        500
+                    ],
+                    "vox": [
+                        8,
+                        0,
+                        5
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        900,
+                        0,
+                        500
+                    ],
+                    "vox": [
+                        9,
+                        0,
+                        5
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        100,
+                        50,
+                        0
+                    ],
+                    "vox": [
+                        1,
+                        1,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        200,
+                        50,
+                        0
+                    ],
+                    "vox": [
+                        2,
+                        1,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        300,
+                        50,
+                        0
+                    ],
+                    "vox": [
+                        3,
+                        1,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        400,
+                        50,
+                        0
+                    ],
+                    "vox": [
+                        4,
+                        1,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        500,
+                        50,
+                        0
+                    ],
+                    "vox": [
+                        5,
+                        1,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        600,
+                        50,
+                        0
+                    ],
+                    "vox": [
+                        6,
+                        1,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        700,
+                        50,
+                        0
+                    ],
+                    "vox": [
+                        7,
+                        1,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        800,
+                        50,
+                        0
+                    ],
+                    "vox": [
+                        8,
+                        1,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        900,
+                        50,
+                        0
+                    ],
+                    "vox": [
+                        9,
+                        1,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        100,
+                        50,
+                        100
+                    ],
+                    "vox": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        200,
+                        50,
+                        100
+                    ],
+                    "vox": [
+                        2,
+                        1,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        300,
+                        50,
+                        100
+                    ],
+                    "vox": [
+                        3,
+                        1,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        400,
+                        50,
+                        100
+                    ],
+                    "vox": [
+                        4,
+                        1,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        500,
+                        50,
+                        100
+                    ],
+                    "vox": [
+                        5,
+                        1,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        600,
+                        50,
+                        100
+                    ],
+                    "vox": [
+                        6,
+                        1,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        700,
+                        50,
+                        100
+                    ],
+                    "vox": [
+                        7,
+                        1,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        800,
+                        50,
+                        100
+                    ],
+                    "vox": [
+                        8,
+                        1,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        900,
+                        50,
+                        100
+                    ],
+                    "vox": [
+                        9,
+                        1,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        100,
+                        50,
+                        200
+                    ],
+                    "vox": [
+                        1,
+                        1,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        200,
+                        50,
+                        200
+                    ],
+                    "vox": [
+                        2,
+                        1,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        300,
+                        50,
+                        200
+                    ],
+                    "vox": [
+                        3,
+                        1,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        400,
+                        50,
+                        200
+                    ],
+                    "vox": [
+                        4,
+                        1,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        500,
+                        50,
+                        200
+                    ],
+                    "vox": [
+                        5,
+                        1,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        600,
+                        50,
+                        200
+                    ],
+                    "vox": [
+                        6,
+                        1,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        700,
+                        50,
+                        200
+                    ],
+                    "vox": [
+                        7,
+                        1,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        800,
+                        50,
+                        200
+                    ],
+                    "vox": [
+                        8,
+                        1,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        900,
+                        50,
+                        200
+                    ],
+                    "vox": [
+                        9,
+                        1,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        100,
+                        50,
+                        300
+                    ],
+                    "vox": [
+                        1,
+                        1,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        200,
+                        50,
+                        300
+                    ],
+                    "vox": [
+                        2,
+                        1,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        300,
+                        50,
+                        300
+                    ],
+                    "vox": [
+                        3,
+                        1,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        400,
+                        50,
+                        300
+                    ],
+                    "vox": [
+                        4,
+                        1,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        500,
+                        50,
+                        300
+                    ],
+                    "vox": [
+                        5,
+                        1,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        600,
+                        50,
+                        300
+                    ],
+                    "vox": [
+                        6,
+                        1,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        700,
+                        50,
+                        300
+                    ],
+                    "vox": [
+                        7,
+                        1,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        800,
+                        50,
+                        300
+                    ],
+                    "vox": [
+                        8,
+                        1,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        900,
+                        50,
+                        300
+                    ],
+                    "vox": [
+                        9,
+                        1,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        100,
+                        50,
+                        400
+                    ],
+                    "vox": [
+                        1,
+                        1,
+                        4
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        200,
+                        50,
+                        400
+                    ],
+                    "vox": [
+                        2,
+                        1,
+                        4
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        300,
+                        50,
+                        400
+                    ],
+                    "vox": [
+                        3,
+                        1,
+                        4
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        400,
+                        50,
+                        400
+                    ],
+                    "vox": [
+                        4,
+                        1,
+                        4
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        500,
+                        50,
+                        400
+                    ],
+                    "vox": [
+                        5,
+                        1,
+                        4
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        600,
+                        50,
+                        400
+                    ],
+                    "vox": [
+                        6,
+                        1,
+                        4
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        700,
+                        50,
+                        400
+                    ],
+                    "vox": [
+                        7,
+                        1,
+                        4
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        800,
+                        50,
+                        400
+                    ],
+                    "vox": [
+                        8,
+                        1,
+                        4
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        900,
+                        50,
+                        400
+                    ],
+                    "vox": [
+                        9,
+                        1,
+                        4
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        200,
+                        100,
+                        0
+                    ],
+                    "vox": [
+                        2,
+                        2,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        300,
+                        100,
+                        0
+                    ],
+                    "vox": [
+                        3,
+                        2,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        400,
+                        100,
+                        0
+                    ],
+                    "vox": [
+                        4,
+                        2,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        500,
+                        100,
+                        0
+                    ],
+                    "vox": [
+                        5,
+                        2,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        600,
+                        100,
+                        0
+                    ],
+                    "vox": [
+                        6,
+                        2,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        700,
+                        100,
+                        0
+                    ],
+                    "vox": [
+                        7,
+                        2,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        800,
+                        100,
+                        0
+                    ],
+                    "vox": [
+                        8,
+                        2,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        900,
+                        100,
+                        0
+                    ],
+                    "vox": [
+                        9,
+                        2,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        200,
+                        100,
+                        100
+                    ],
+                    "vox": [
+                        2,
+                        2,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        300,
+                        100,
+                        100
+                    ],
+                    "vox": [
+                        3,
+                        2,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        400,
+                        100,
+                        100
+                    ],
+                    "vox": [
+                        4,
+                        2,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        500,
+                        100,
+                        100
+                    ],
+                    "vox": [
+                        5,
+                        2,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        600,
+                        100,
+                        100
+                    ],
+                    "vox": [
+                        6,
+                        2,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        700,
+                        100,
+                        100
+                    ],
+                    "vox": [
+                        7,
+                        2,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        800,
+                        100,
+                        100
+                    ],
+                    "vox": [
+                        8,
+                        2,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        900,
+                        100,
+                        100
+                    ],
+                    "vox": [
+                        9,
+                        2,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        200,
+                        100,
+                        200
+                    ],
+                    "vox": [
+                        2,
+                        2,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        300,
+                        100,
+                        200
+                    ],
+                    "vox": [
+                        3,
+                        2,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        400,
+                        100,
+                        200
+                    ],
+                    "vox": [
+                        4,
+                        2,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        500,
+                        100,
+                        200
+                    ],
+                    "vox": [
+                        5,
+                        2,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        600,
+                        100,
+                        200
+                    ],
+                    "vox": [
+                        6,
+                        2,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        700,
+                        100,
+                        200
+                    ],
+                    "vox": [
+                        7,
+                        2,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        800,
+                        100,
+                        200
+                    ],
+                    "vox": [
+                        8,
+                        2,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        900,
+                        100,
+                        200
+                    ],
+                    "vox": [
+                        9,
+                        2,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        200,
+                        100,
+                        300
+                    ],
+                    "vox": [
+                        2,
+                        2,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        300,
+                        100,
+                        300
+                    ],
+                    "vox": [
+                        3,
+                        2,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        400,
+                        100,
+                        300
+                    ],
+                    "vox": [
+                        4,
+                        2,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        500,
+                        100,
+                        300
+                    ],
+                    "vox": [
+                        5,
+                        2,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        600,
+                        100,
+                        300
+                    ],
+                    "vox": [
+                        6,
+                        2,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        700,
+                        100,
+                        300
+                    ],
+                    "vox": [
+                        7,
+                        2,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        800,
+                        100,
+                        300
+                    ],
+                    "vox": [
+                        8,
+                        2,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        900,
+                        100,
+                        300
+                    ],
+                    "vox": [
+                        9,
+                        2,
+                        3
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        300,
+                        150,
+                        0
+                    ],
+                    "vox": [
+                        3,
+                        3,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        400,
+                        150,
+                        0
+                    ],
+                    "vox": [
+                        4,
+                        3,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        500,
+                        150,
+                        0
+                    ],
+                    "vox": [
+                        5,
+                        3,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        600,
+                        150,
+                        0
+                    ],
+                    "vox": [
+                        6,
+                        3,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        700,
+                        150,
+                        0
+                    ],
+                    "vox": [
+                        7,
+                        3,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        800,
+                        150,
+                        0
+                    ],
+                    "vox": [
+                        8,
+                        3,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        900,
+                        150,
+                        0
+                    ],
+                    "vox": [
+                        9,
+                        3,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        300,
+                        150,
+                        100
+                    ],
+                    "vox": [
+                        3,
+                        3,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        400,
+                        150,
+                        100
+                    ],
+                    "vox": [
+                        4,
+                        3,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        500,
+                        150,
+                        100
+                    ],
+                    "vox": [
+                        5,
+                        3,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        600,
+                        150,
+                        100
+                    ],
+                    "vox": [
+                        6,
+                        3,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        700,
+                        150,
+                        100
+                    ],
+                    "vox": [
+                        7,
+                        3,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        800,
+                        150,
+                        100
+                    ],
+                    "vox": [
+                        8,
+                        3,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        900,
+                        150,
+                        100
+                    ],
+                    "vox": [
+                        9,
+                        3,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        300,
+                        150,
+                        200
+                    ],
+                    "vox": [
+                        3,
+                        3,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        400,
+                        150,
+                        200
+                    ],
+                    "vox": [
+                        4,
+                        3,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        500,
+                        150,
+                        200
+                    ],
+                    "vox": [
+                        5,
+                        3,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        600,
+                        150,
+                        200
+                    ],
+                    "vox": [
+                        6,
+                        3,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        700,
+                        150,
+                        200
+                    ],
+                    "vox": [
+                        7,
+                        3,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        800,
+                        150,
+                        200
+                    ],
+                    "vox": [
+                        8,
+                        3,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        900,
+                        150,
+                        200
+                    ],
+                    "vox": [
+                        9,
+                        3,
+                        2
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        400,
+                        200,
+                        0
+                    ],
+                    "vox": [
+                        4,
+                        4,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        500,
+                        200,
+                        0
+                    ],
+                    "vox": [
+                        5,
+                        4,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        600,
+                        200,
+                        0
+                    ],
+                    "vox": [
+                        6,
+                        4,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        700,
+                        200,
+                        0
+                    ],
+                    "vox": [
+                        7,
+                        4,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        800,
+                        200,
+                        0
+                    ],
+                    "vox": [
+                        8,
+                        4,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        900,
+                        200,
+                        0
+                    ],
+                    "vox": [
+                        9,
+                        4,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        400,
+                        200,
+                        100
+                    ],
+                    "vox": [
+                        4,
+                        4,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        500,
+                        200,
+                        100
+                    ],
+                    "vox": [
+                        5,
+                        4,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        600,
+                        200,
+                        100
+                    ],
+                    "vox": [
+                        6,
+                        4,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        700,
+                        200,
+                        100
+                    ],
+                    "vox": [
+                        7,
+                        4,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        800,
+                        200,
+                        100
+                    ],
+                    "vox": [
+                        8,
+                        4,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        900,
+                        200,
+                        100
+                    ],
+                    "vox": [
+                        9,
+                        4,
+                        1
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        500,
+                        250,
+                        0
+                    ],
+                    "vox": [
+                        5,
+                        5,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        600,
+                        250,
+                        0
+                    ],
+                    "vox": [
+                        6,
+                        5,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        700,
+                        250,
+                        0
+                    ],
+                    "vox": [
+                        7,
+                        5,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        800,
+                        250,
+                        0
+                    ],
+                    "vox": [
+                        8,
+                        5,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        },
+        {
+            "comp": {
+                "appearance": {
+                    "mesh": null,
+                    "meshName": "grassTerrain",
+                    "oppacity": 1,
+                    "scene": null
+                },
+                "associatedZone": true,
+                "consistence": 1,
+                "position": {
+                    "abs": [
+                        900,
+                        250,
+                        0
+                    ],
+                    "vox": [
+                        9,
+                        5,
+                        0
+                    ]
+                },
+                "size": [
+                    1,
+                    1,
+                    1
+                ],
+                "weight": 100
+            },
+            "name": "grass",
+            "sys": [
+                "storedInZoneContainer"
+            ],
+            "type": "terrain"
+        }
+    ]
+}

@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+  <head>
+    <title>neige</title>
+    <meta charset="utf-8">
+    <style>
+    </style>
+    <link href="stylesheets/default.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/main.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  </head>
+<body>
+  <div id="screen" tabindex="0">
+    <!-- Global GUI -->
+    <div id="globalGUI" class="gui background">
+      <div id="pointerInfos" class="floatingBox">
+        <span>Pointer Abs: </span><span id="pointerCoordAbs"></span>
+        <br />
+        <span>Pointer Vox: </span><span id="pointerCoordVox"></span>
+      </div>
+    </div>
+    <!-- Zone GUI -->
+    <div id="defaultZoneGUI" class="gui background" tabindex="1">
+      <div id="conversation">
+        <div class="from person"></div>
+        <div class="messageContent"></div>
+        <div class="to person"></div>
+      </div>
+    </div>
+    <!-- Combat GUI-->
+    <div id="combatZoneGUI" class="gui background" tabindex="1">
+      <div id="turnQueue" class="menuBar">
+        <ol id="turnQueueOl">
+        </ol>
+      </div>
+      <div id="currentTurnEntInfos" class="floatingBox">
+        <span>Turn Ent Abs: </span><span id="turnEntCoordAbs"></span>
+        <br />
+        <span>Turn Ent mesh Abs: </span><span id="turnEntMeshCoordAbs"></span>
+        <br />
+        <span>Turn Ent Vox: </span><span id="turnEntCoordVox"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- <script type="text/javascript" src="maps/map1.json" class="json"></script> -->
+
+
+  <script src="../libs/fpsmeter.min.js"></script>
+  <script src="../libs/three.min.js"></script>
+  <script src="../libs/tween.min.js"></script>
+  <script src="../libs/priority-queue.js"></script>
+
+  <script src="keyboard.js"></script>
+  <script src="utils.js"></script>
+  <script src="factories.js"></script>
+  <script src="graphics.js"></script>
+  <script src="containers.js"></script>
+
+  <script src="systems/dataSystems.js"></script>
+  <script src="systems/actionSystems.js"></script>
+  <script src="systems/behaviourSystems.js"></script>
+  <script src="systems/graphicsSystems.js"></script>
+  <script src="systems/ruleSystems.js"></script>
+  <script src="systems/guiSystems.js"></script>
+  <script src="components.js"></script>
+  <script src="entities.js"></script>
+
+
+  <script src="stateManager.js"></script>
+  <script src="zoneState.js"></script>
+  <script src="conversationState.js"></script>
+  <script src="combatState.js"></script>
+  <script src="defaultZoneGUI.js"></script>
+  <script src="pointer.js"></script>
+  <script src="movement.js"></script>
+  <script type="text/javascript">
+    "use strict"
+
+    var domEl = document.getElementById("screen");
+    // domEl.setAttribute("tabindex", 0); //otherwise key event doesn't fire
+    domEl.addEventListener("mousedown", function(e) {
+          stateManager.handleMouseClicked(true, e);
+        }, false);
+    domEl.addEventListener("mouseup", function(e) {
+          stateManager.handleMouseClicked(false, e);
+        }, false);
+    domEl.addEventListener("wheel", stateManager.handleMouseWheel, false);
+    domEl.addEventListener("mousemove", stateManager.handleMouseMoved, false);
+    document.addEventListener("keydown", stateManager.handleKeyboardDown, false);
+    document.addEventListener("keyup", stateManager.handleKeyboardUp, false);
+
+    // stateManager.pushState(Game.States.createZone());
+    stateManager.pushState(Game.States.createCombat());
+    // stateManager.pushState(Game.States.createEditor());
+
+    // Game loop
+    var fpsmeter = new FPSMeter({decimals: 0, graph: true, theme: 'dark', right: '5px', bottom: '5px', left: 'auto', top: 'auto'});    
+    var now,
+        dt   = 0,
+        last = window.performance.now(),
+        step = 1/30;
+    function frame() {
+      fpsmeter.tickStart();      
+      now = window.performance.now();
+      dt = dt + Math.min(1, (now - last) / 1000);
+
+      while(dt > step) {
+        dt = dt - step;
+        stateManager.update(step);
+      }
+      stateManager.draw(dt);
+      last = now;
+      requestAnimationFrame(frame);
+      fpsmeter.tick();      
+    }
+    requestAnimationFrame(frame);
+
+  </script>
+</body>
+</html>
