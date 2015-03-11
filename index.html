@@ -39,6 +39,7 @@
         <br />
         <span>Turn Ent Vox: </span><span id="turnEntCoordVox"></span>
       </div>
+      <button id="endTurn">End turn</button>
     </div>
   </div>
 
@@ -94,7 +95,7 @@
     // stateManager.pushState(Game.States.createEditor());
 
     // Game loop
-    var fpsmeter = new FPSMeter({decimals: 0, graph: true, theme: 'dark', right: '5px', bottom: '5px', left: 'auto', top: 'auto'});    
+    var fpsmeter = new FPSMeter({decimals: 0, graph: true, theme: 'dark', right: '5px', top: '5px', left: 'auto', top: 'auto'});    
     var now,
         dt   = 0,
         last = window.performance.now(),

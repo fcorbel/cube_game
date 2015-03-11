@@ -170,7 +170,7 @@ Game.Movement.free = {
 };
 
 Game.Movement.goToVox = function(ent, x, y, z, speed, cbk) {
-    console.log(ent.name+" will try to go to: "+x+","+y+","+z);
+    // console.log(ent.name+" will try to go to: "+x+","+y+","+z);
     if (ent.c.associatedZone.s.physicsRules.canBeAt(ent.uid, ent.c.size, ent.c.consistence, x, y, z)) {
       var currPos = ent.c.position.vox;
       var newPos = [x, y, z];

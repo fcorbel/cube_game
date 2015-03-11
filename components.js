@@ -69,6 +69,7 @@ ECS.Components.combatZoneGUI = function() {
     pointedCoordVox: null,
     // conversation: null,
     pointerIndicatorMesh: null,
+    highlightMesh: null
   };
 };
 

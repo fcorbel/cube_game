@@ -83,6 +83,7 @@ ECS.Systems.combatZoneRules = {
   dependency: ["combatZoneRules"],
   callbacks: {
     "startTurn": "startTurn",
+    "endTurn": "endTurn",
   },
   entityCallbacks: {},
   init: function() {
@@ -95,12 +96,16 @@ ECS.Systems.combatZoneRules = {
       ECS.Entities.addSystem(turnEnt, "uiControled");
       turnEnt.initSystem("uiControled");
     } else {
-      ECS.Entities.addSystem(this.c.entitiesList[turnEnt], "aiControled");
+      ECS.Entities.addSystem(turnEnt, "aiControled");
       turnEnt.initSystem("aiControled");
     }
     this.em.send("turnStarted", turnEnt);
   },
   endTurn: function() {
+    var turnEntUID = this.c.combatZoneRules.turnQueue.shift();
+    this.c.combatZoneRules.turnQueue.push(turnEntUID);
+    var turnEnt = this.c.entitiesList[turnEntUID];
+    this.em.send("turnEnded", turnEnt);
   },
   setTurnQueue: function() {
     var teams = this.c.combatZoneRules.teams;

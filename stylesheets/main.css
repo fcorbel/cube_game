@@ -7,7 +7,7 @@ canvas {
   z-index: 0;
 }
 
-
+/* Global */
 .gui {
   height: 100%;
   width: 100%;
@@ -17,6 +17,25 @@ canvas {
   left: 0;
   display: none;
 }
+
+#pointerInfos {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+/* Combat */
+
+#endTurn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+
+
+
+/* Zone */
 
 #conversation {
   position: fixed;
@@ -48,11 +67,6 @@ canvas {
   right: 1rem;
 }
 
-#pointerInfos {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-}
 
 
 

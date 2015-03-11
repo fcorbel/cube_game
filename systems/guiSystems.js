@@ -69,7 +69,8 @@ ECS.Systems.combatZoneGUI = {
   dependency: ["combatZoneGUI", "combatZoneRules"],
   callbacks: {"pointedCoordChanged": "updatePointerCoord",
               "mouseClicked": "click",
-              "turnStarted": "updateGUI",
+              "turnStarted": "updateGUIStart",
+              "turnEnded": "updateGUIEnd",
               "updateLogic": "updateTurnEntInfos"},
   entityCallbacks: {},
   init: function() {
@@ -77,10 +78,20 @@ ECS.Systems.combatZoneGUI = {
     globEl.style.display = "initial";
     var domEl = document.getElementById(this.c.combatZoneGUI.domName);
     domEl.style.display = "initial";
+    
+    var em = this.em;
+    document.getElementById("endTurn").onclick = function() {
+      em.send("endTurn");
+      em.send("startTurn");
+    };
   },
-  updateGUI: function(ent) {
-    this.s.combatZoneGUI.updateTurnQueueEl(ent);
+  updateGUIStart: function(ent) {
+    this.s.combatZoneGUI.updateTurnQueueEl();
     this.s.combatZoneGUI.setState(ent, "walk");
+  },
+  updateGUIEnd: function(ent) {
+    this.c.appearance.scene.remove(this.c.combatZoneGUI.highlightMesh);
+    this.c.combatZoneGUI.highlightMesh = null;
   },
   setState: function(ent, newState) {
     //clean previous state
@@ -94,13 +105,16 @@ ECS.Systems.combatZoneGUI = {
       var targetable = sys.getTargetable();
       var mesh = Game.Graphics.getHighlightTilesMesh(targetable, "defaultHighlight");
       this.c.appearance.scene.add(mesh);
+      this.c.combatZoneGUI.highlightMesh = mesh;
     }
     this.c.combatZoneGUI.state = newState;
   },
-  updateTurnQueueEl: function(ent) {
+  updateTurnQueueEl: function() {
     var domEl = document.getElementById("turnQueueOl");
+    domEl.innerHTML = "";
     var queue = this.c.combatZoneRules.turnQueue;
     for (var i=0, l=queue.length; i<l; i++) {
+      var ent = this.c.entitiesList[queue[i]];
       if (ent) {
         var liEl = document.createElement("li");
         liEl.innerHTML = ent.name;
