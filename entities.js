@@ -34,6 +34,9 @@ ECS.Entities.Entity.prototype.initSystem = function(sysName) {
       var cbks = ECS.Systems[sysName].callbacks;
       if (Object.keys(cbks).length !== 0) {
         for (var evt in cbks) {
+          if (!sys[cbks[evt]]) {
+            console.warn("Register event to an undefined function.");
+          }
           this.em.register(evt, sys[cbks[evt]]);
         }
       }

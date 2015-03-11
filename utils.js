@@ -36,6 +36,10 @@ Utils.EventManager.prototype.processEvent = function(name, args) {
   if (this.evMap[name]) {
     var cbks = this.evMap[name];
     for (var i=0, l=cbks.length; i<l; i++) {
+      if (!cbks[i]) {
+        console.error("A callback is missing for event: "+name);
+        return null;
+      }
       cbks[i].apply(undefined, args);
     }
   }

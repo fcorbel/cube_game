@@ -70,7 +70,7 @@ ECS.Systems.combatZoneGUI = {
   callbacks: {"pointedCoordChanged": "updatePointerCoord",
               "mouseClicked": "click",
               "turnStarted": "updateGUIStart",
-              "turnEnded": "updateGUIEnd",
+              // "turnEnded": "updateGUIEnd",
               "setGUIState": "setState",
               "updateLogic": "updateTurnEntInfos"},
   entityCallbacks: {},
@@ -95,6 +95,7 @@ ECS.Systems.combatZoneGUI = {
       this.c.combatZoneGUI.uiControled = false;
     }
   },
+  //TODO create a state "acting" to represent the fact tha its doing something
   setState: function(ent, newState) {
     //clean previous state
     if (this.c.combatZoneGUI.highlightMesh) {
