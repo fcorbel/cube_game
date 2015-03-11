@@ -134,7 +134,11 @@ ECS.Systems.uiControled = {
     var uids = this.c.associatedZone.c.container.get(voxCoord[0], voxCoord[1], voxCoord[2]);
     if (!uids || uids.length === 0) {
       if (this.s.walk) {
-        this.s.walk.execute(coord);
+        var em = this.em;
+        var that = this;
+        this.s.walk.execute(coord, function() {
+          em.send("setGUIState", that, "walk");
+        });
       }
     } else {
       for (var i=0, l=uids.length; i<l; i++) {

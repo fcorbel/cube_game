@@ -70,7 +70,8 @@ ECS.Systems.combatZoneGUI = {
   callbacks: {"pointedCoordChanged": "updatePointerCoord",
               "mouseClicked": "click",
               "turnStarted": "updateGUIStart",
-              "turnEnded": "updateGUIEnd",
+              // "turnEnded": "updateGUIEnd",
+              "setGUIState": "setState",
               "updateLogic": "updateTurnEntInfos"},
   entityCallbacks: {},
   init: function() {
@@ -94,12 +95,12 @@ ECS.Systems.combatZoneGUI = {
       this.c.combatZoneGUI.uiControled = false;
     }
   },
-  updateGUIEnd: function(ent) {
-    this.c.appearance.scene.remove(this.c.combatZoneGUI.highlightMesh);
-    this.c.combatZoneGUI.highlightMesh = null;
-  },
   setState: function(ent, newState) {
     //clean previous state
+    if (this.c.combatZoneGUI.highlightMesh) {
+      this.c.appearance.scene.remove(this.c.combatZoneGUI.highlightMesh);
+      this.c.combatZoneGUI.highlightMesh = null;
+    }
     //set new state
     var sys = ent.s[newState];
     if (!sys) {
@@ -113,6 +114,7 @@ ECS.Systems.combatZoneGUI = {
       this.c.combatZoneGUI.highlightMesh = mesh;
     }
     this.c.combatZoneGUI.state = newState;
+    console.debug("GUI state set to: "+newState);
   },
   updateTurnQueueEl: function() {
     var domEl = document.getElementById("turnQueueOl");
