@@ -66,10 +66,10 @@ ECS.Systems.defaultZoneGUI = {
 };
 
 ECS.Systems.combatZoneGUI = {
-  dependency: ["combatZoneGUI"],
+  dependency: ["combatZoneGUI", "combatZoneRules"],
   callbacks: {"pointedCoordChanged": "updatePointerCoord",
               "mouseClicked": "click",
-              "startTurn": "startTurn",
+              "turnStarted": "updateGUI",
               "updateLogic": "updateTurnEntInfos"},
   entityCallbacks: {},
   init: function() {
@@ -77,28 +77,15 @@ ECS.Systems.combatZoneGUI = {
     globEl.style.display = "initial";
     var domEl = document.getElementById(this.c.combatZoneGUI.domName);
     domEl.style.display = "initial";
-    this.s.combatZoneGUI.setTurnQueue();
   },
-  startTurn: function() {
-    this.s.combatZoneGUI.updateTurnQueueEl();
-    this.s.combatZoneGUI.setState("walk");
-    var turnEntUID = this.c.combatZoneGUI.turnQueue[0];
-    var turnEnt = this.c.entitiesList[turnEntUID];
-    if (this.c.combatZoneGUI.teams[turnEntUID] === "Player") {
-      ECS.Entities.addSystem(turnEnt, "uiControled");
-      turnEnt.initSystem("uiControled");
-    } else {
-      ECS.Entities.addSystem(this.c.entitiesList[turnEnt], "aiControled");
-      turnEnt.initSystem("aiControled");
-    }
+  updateGUI: function(ent) {
+    this.s.combatZoneGUI.updateTurnQueueEl(ent);
+    this.s.combatZoneGUI.setState(ent, "walk");
   },
-  endTurn: function() {
-  },
-  setState: function(newState) {
-    var turnEnt = this.c.entitiesList[this.c.combatZoneGUI.turnQueue[0]];
+  setState: function(ent, newState) {
     //clean previous state
     //set new state
-    var sys = turnEnt.s[newState];
+    var sys = ent.s[newState];
     if (!sys) {
       console.warn("No system available to set new state.");
       return null;
@@ -110,18 +97,10 @@ ECS.Systems.combatZoneGUI = {
     }
     this.c.combatZoneGUI.state = newState;
   },
-  setTurnQueue: function() {
-    var teams = this.c.combatZoneGUI.teams;
-    var turnQueue = this.c.combatZoneGUI.turnQueue;
-    for (var entUID in teams) {
-      turnQueue.push(entUID);
-    }
-  },
-  updateTurnQueueEl: function() {
+  updateTurnQueueEl: function(ent) {
     var domEl = document.getElementById("turnQueueOl");
-    var queue = this.c.combatZoneGUI.turnQueue;
+    var queue = this.c.combatZoneRules.turnQueue;
     for (var i=0, l=queue.length; i<l; i++) {
-      var ent = this.c.entitiesList[queue[i]];
       if (ent) {
         var liEl = document.createElement("li");
         liEl.innerHTML = ent.name;
@@ -133,7 +112,7 @@ ECS.Systems.combatZoneGUI = {
     var elAbs = document.getElementById("turnEntCoordAbs");
     var elmeshAbs = document.getElementById("turnEntMeshCoordAbs");
     var elVox = document.getElementById("turnEntCoordVox");
-    var ent = this.c.entitiesList[this.c.combatZoneGUI.turnQueue[0]];
+    var ent = this.c.entitiesList[this.c.combatZoneRules.turnQueue[0]];
     elAbs.innerHTML = ent.c.position.abs;
     elmeshAbs.innerHTML = JSON.stringify(ent.c.appearance.mesh.position);
     elVox.innerHTML = ent.c.position.vox;

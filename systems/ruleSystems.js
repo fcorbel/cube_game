@@ -79,3 +79,36 @@ ECS.Systems.physicsRules = {
   // },
 };
 
+ECS.Systems.combatZoneRules = {
+  dependency: ["combatZoneRules"],
+  callbacks: {
+    "startTurn": "startTurn",
+  },
+  entityCallbacks: {},
+  init: function() {
+    this.s.combatZoneRules.setTurnQueue();
+  },
+  startTurn: function() {
+    var turnEntUID = this.c.combatZoneRules.turnQueue[0];
+    var turnEnt = this.c.entitiesList[turnEntUID];
+    if (this.c.combatZoneRules.teams[turnEntUID] === "Player") {
+      ECS.Entities.addSystem(turnEnt, "uiControled");
+      turnEnt.initSystem("uiControled");
+    } else {
+      ECS.Entities.addSystem(this.c.entitiesList[turnEnt], "aiControled");
+      turnEnt.initSystem("aiControled");
+    }
+    this.em.send("turnStarted", turnEnt);
+  },
+  endTurn: function() {
+  },
+  setTurnQueue: function() {
+    var teams = this.c.combatZoneRules.teams;
+    var turnQueue = this.c.combatZoneRules.turnQueue;
+    for (var entUID in teams) {
+      turnQueue.push(entUID);
+    }
+  },
+  clean: function() {
+  }
+};

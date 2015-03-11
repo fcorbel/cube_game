@@ -190,9 +190,10 @@ ECS.Entities.Tpl.combatZone = {
     entitiesList: true,
     appearance:true,
     combatZoneGUI: true,
+    combatZoneRules: true,
     physicsRules: true
   },
-  sys: ["dataLoader", "drawZone", "sunLighting", "physicsRules", "combatZoneGUI"]
+  sys: ["dataLoader", "drawZone", "sunLighting", "physicsRules", "combatZoneGUI", "combatZoneRules"]
 };
 
 ECS.Entities.Tpl.water = {

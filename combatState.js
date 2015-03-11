@@ -78,8 +78,8 @@ Game.States.createCombat = function() {
   //////////////////
   // Specific to combat state
   //////////////////
-  state.zone.c.combatZoneGUI.teams[player.uid] = "Player";
-  state.zone.c.combatZoneGUI.teams[mouse.uid] = "Ennemy";
+  state.zone.c.combatZoneRules.teams[player.uid] = "Player";
+  state.zone.c.combatZoneRules.teams[mouse.uid] = "Ennemy";
 
   state.zone.initSystems();
   var plPos = player.c.appearance.mesh.position;

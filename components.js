@@ -69,6 +69,11 @@ ECS.Components.combatZoneGUI = function() {
     pointedCoordVox: null,
     // conversation: null,
     pointerIndicatorMesh: null,
+  };
+};
+
+ECS.Components.combatZoneRules = function() {
+  return {
     turnQueue: [],
     teams: {}
   };
