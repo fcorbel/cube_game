@@ -88,6 +88,11 @@ ECS.Systems.combatZoneGUI = {
   updateGUIStart: function(ent) {
     this.s.combatZoneGUI.updateTurnQueueEl();
     this.s.combatZoneGUI.setState(ent, "walk");
+    if (ent.s.uiControled) {
+      this.c.combatZoneGUI.uiControled = true;
+    } else {
+      this.c.combatZoneGUI.uiControled = false;
+    }
   },
   updateGUIEnd: function(ent) {
     this.c.appearance.scene.remove(this.c.combatZoneGUI.highlightMesh);
@@ -163,16 +168,18 @@ ECS.Systems.combatZoneGUI = {
     mesh.position.z = absPos[2];
   },
   click: function(down, event) {
-    if (down) {
-      switch (this.c.combatZoneGUI.state) {
-        case "walk":
-          var coord = this.c.combatZoneGUI.pointedCoordAbs;
-          if (coord) {
-            this.em.send("clickOnTerrain", coord);
-          }
-          break;
-        default:
-          break;
+    if (this.c.combatZoneGUI.uiControled) {
+      if (down) {
+        switch (this.c.combatZoneGUI.state) {
+          case "walk":
+            var coord = this.c.combatZoneGUI.pointedCoordAbs;
+            if (coord) {
+              this.em.send("clickOnTerrain", coord);
+            }
+            break;
+          default:
+            break;
+        }
       }
     }
   },

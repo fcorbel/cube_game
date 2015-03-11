@@ -98,6 +98,7 @@ ECS.Systems.combatZoneRules = {
     } else {
       ECS.Entities.addSystem(turnEnt, "aiControled");
       turnEnt.initSystem("aiControled");
+      turnEnt.s.aiControled.think();
     }
     this.em.send("turnStarted", turnEnt);
   },

@@ -72,7 +72,12 @@ ECS.Systems.walk = {
   dependency: ["position", "associatedZone"],
   callbacks: {},
   entityCallbacks: {},
-  execute: function(absCoord) {
+  execute: function(absCoord, onFinished) {
+    if (!onFinished) {
+      onFinished = function() {
+        console.debug("Action finished");
+      };
+    }
     var mvtType = this.c.associatedZone.c.physicsRules.move;
     if (mvtType === "tile") {
       var voxCoord = Game.Graphics.getVoxPosFromAbsPos([1,1,1], absCoord[0], absCoord[1], absCoord[2]);
@@ -95,14 +100,20 @@ ECS.Systems.walk = {
       }
       var path = Game.Movement[mvtType].walk.getPath(this, voxCoord[0], voxCoord[1], voxCoord[2]);
       if (path) {
+        
         path.pop(); //the last coord is the actual position
         var that = this;
         var cbk = function() {
+          if (path.length === 0) {
+            onFinished();
+          }
           if (path.length !== 0) {
             Game.Movement[mvtType].walk.go(that, path.pop(), cbk);
           }
         };
         Game.Movement[mvtType].walk.go(this, path.pop(), cbk);
+      } else {
+        onFinished();
       }
     }
   },
@@ -117,10 +128,7 @@ ECS.Systems.uiControled = {
   dependency: [],
   callbacks: {"clickOnTerrain": "click"},
   entityCallbacks: {},
-  // click: function() {
-  // }
   click: function(coord) {
-      console.log("DFDFA");
     //check what is clicked on to know what do do:move, talk, action,...
     var voxCoord = Game.Graphics.getVoxPosFromAbsPos([1, 1, 1], coord[0], coord[1], coord[2]);
     var uids = this.c.associatedZone.c.container.get(voxCoord[0], voxCoord[1], voxCoord[2]);
@@ -145,28 +153,37 @@ ECS.Systems.uiControled = {
 ECS.Systems.aiControled = {
   dependency: [],
   callbacks: {},
-  entityCallbacks: {"yourTurn": "think"},
+  entityCallbacks: {},
   init: function() {
   },
   think: function() {
     console.log(this.name+" is thinking...");
-    this.s.aiControled.moveRandomly();
-    this.em.send("turnFinished", this);
+    var em = this.em;
+    this.s.aiControled.moveRandomly(function() {
+      em.send("endTurn");
+      em.send("startTurn");
+    });
   },
-  moveRandomly: function() {
+  moveRandomly: function(cbk) {
     var dir = Math.floor(4*Math.random());
+    var voxCoord = this.c.position.vox;
+    var absCoord;
     switch (dir) {
       case 0:
-        this.s.move.left();
+        absCoord = Game.Graphics.getAbsPosFromVoxPos([1,1,1], voxCoord[0]-1, voxCoord[1], voxCoord[2]);
+        this.s.walk.execute(absCoord, cbk);
         break;
       case 1:
-        this.s.move.right();
+        absCoord = Game.Graphics.getAbsPosFromVoxPos([1,1,1], voxCoord[0]+1, voxCoord[1], voxCoord[2]);
+        this.s.walk.execute(absCoord, cbk);
         break;
       case 2:
-        this.s.move.up();
+        absCoord = Game.Graphics.getAbsPosFromVoxPos([1,1,1], voxCoord[0], voxCoord[1], voxCoord[2]-1);
+        this.s.walk.execute(absCoord, cbk);
         break;
       case 3:
-        this.s.move.down();
+        absCoord = Game.Graphics.getAbsPosFromVoxPos([1,1,1], voxCoord[0], voxCoord[1], voxCoord[2]+1);
+        this.s.walk.execute(absCoord, cbk);
         break;
       default:
         console.warn("Don't know this direction...");
