@@ -70,7 +70,7 @@ ECS.Systems.combatZoneGUI = {
   callbacks: {"pointedCoordChanged": "updatePointerCoord",
               "mouseClicked": "click",
               "turnStarted": "updateGUIStart",
-              // "turnEnded": "updateGUIEnd",
+              "turnEnded": "updateGUIEnd",
               "setGUIState": "setState",
               "updateLogic": "updateTurnEntInfos"},
   entityCallbacks: {},
@@ -108,8 +108,12 @@ ECS.Systems.combatZoneGUI = {
       return null;
     }
     if (sys.getTargetable) {
+      var highlightName = "defaultHighlight";
+      if (newState === "walk") {
+        highlightName = "moveHighlight";
+      }
       var targetable = sys.getTargetable();
-      var mesh = Game.Graphics.getHighlightTilesMesh(targetable, "defaultHighlight");
+      var mesh = Game.Graphics.getHighlightTilesMesh(targetable, highlightName);
       this.c.appearance.scene.add(mesh);
       this.c.combatZoneGUI.highlightMesh = mesh;
     }

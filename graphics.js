@@ -469,7 +469,7 @@ Game.Graphics.createMaterialFactory = function(matStyle) {
         case "mouse":
           material = new THREE.MeshBasicMaterial({color: 0xAAAAAA});
           break;
-        case "move":
+        case "moveHighlight":
           material = new THREE.MeshBasicMaterial({color: 0xffff00, opacity: 0.3, transparent: true});
           break;
         case "defaultHighlight":
@@ -716,7 +716,7 @@ Game.Graphics.createGeometryFactory = function() {
       case "mouse":
         geometry = new THREE.CubeGeometry(Game.Graphics.voxelSize.x/2, Game.Graphics.voxelSize.y, Game.Graphics.voxelSize.z/2);
         break;
-      case "move":
+      case "moveHighlight":
         geometry = new THREE.PlaneGeometry(Game.Graphics.voxelSize.x, Game.Graphics.voxelSize.z);
         geometry.applyMatrix(matrix.makeRotationX(-Math.PI / 2));
         geometry.applyMatrix(matrix.makeTranslation(0, -Game.Graphics.voxelSize.y/2, 0));
