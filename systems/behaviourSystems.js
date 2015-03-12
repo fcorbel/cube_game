@@ -84,25 +84,25 @@ ECS.Systems.walk = {
       if (Utils.arrayShallowEqual(coord, this.c.position.vox)) {
         return null;
       }
-      //TODO cette partie semble un peu foireuse
-      // if (!this.c.movement.infiniteMvt) {
-        var canGo = Game.Movement[mvtType].walk.getMovable(this, this.c.movement.currentPoints);
-        var isIn = false;
-        for (var i=0, l=canGo.length; i<l; i++) {
-          if (Utils.arrayShallowEqual(coord, canGo[i])) {
-            isIn = true;
-            break;
-          }
+      //Can I really go there?
+      var targetable = this.s.walk.getTargetable();
+      var isIn = false;
+      for (var i=0, l=targetable.length; i<l; i++) {
+        if (Utils.arrayShallowEqual(coord, targetable[i])) {
+          isIn = true;
+          break;
         }
-        if (!isIn) {
-          console.warn(JSON.stringify(coord)+ " is not in the targetable coords which are: "+ JSON.stringify(canGo));
-          return null;
-        }
-      // }
+      }
+      if (!isIn) {
+        console.warn(JSON.stringify(coord)+ " is not in the targetable coords which are: "+ JSON.stringify(targetable));
+        return null;
+      }
+      //Create path and move
       var path = Game.Movement[mvtType].walk.getPath(this, coord[0], coord[1], coord[2]);
       if (path) {
         onStart();
         path.pop(); //the last coord is the actual position
+        console.log("Follow path: "+JSON.stringify(path));
         var that = this;
         var cbk = function() {
           if (path.length === 0) {
@@ -129,6 +129,7 @@ ECS.Systems.uiControled = {
   callbacks: {"clickOnTerrain": "click"},
   entityCallbacks: {},
   click: function(coord) {
+    console.info("Clicked on terrain: "+JSON.stringify(coord));
     //check what is clicked on to know what do do:move, talk, action,...
     var voxCoord = Game.Graphics.getVoxPosFromAbsPos([1, 1, 1], coord[0], coord[1], coord[2]);
     var uids = this.c.associatedZone.c.container.get(voxCoord[0], voxCoord[1], voxCoord[2]);

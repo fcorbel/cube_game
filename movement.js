@@ -5,6 +5,10 @@ Game.Movement.tile = {
   //walking, with tiles movements
   walk: {
     go: function(ent, voxCoord, cbk) {
+      console.log("go to: "+JSON.stringify(voxCoord));
+      if (!ent.c.movement.infiniteMvt) {
+        ent.c.movement.currentPoints -= 1;
+      }
       Game.Movement.goToVox(ent, voxCoord[0], voxCoord[1], voxCoord[2], 50, cbk);
     },
     getPath: function(ent, x, y, z) {

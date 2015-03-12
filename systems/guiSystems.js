@@ -123,7 +123,7 @@ ECS.Systems.combatZoneGUI = {
       }
     }
     this.c.combatZoneGUI.state = newState;
-    console.debug("GUI state set to: "+newState);
+    console.debug("GUI state set to: "+newState+", for entity: "+ent.name);
   },
   enterInActionState: function(ent) {
     if (ent.uid !== this.c.combatZoneRules.turnQueue[0]) {
@@ -156,10 +156,14 @@ ECS.Systems.combatZoneGUI = {
     var elAbs = document.getElementById("turnEntCoordAbs");
     var elmeshAbs = document.getElementById("turnEntMeshCoordAbs");
     var elVox = document.getElementById("turnEntCoordVox");
+    var currMovePt = document.getElementById("currentMovePoints");
+    var maxMovePt = document.getElementById("maxMovePoints");
     var ent = this.c.entitiesList[this.c.combatZoneRules.turnQueue[0]];
     elAbs.innerHTML = ent.c.position.abs;
     elmeshAbs.innerHTML = JSON.stringify(ent.c.appearance.mesh.position);
     elVox.innerHTML = ent.c.position.vox;
+    currMovePt.innerHTML = ent.c.movement.currentPoints;
+    maxMovePt.innerHTML = ent.c.movement.maxPoints;
   },
   updatePointerCoord: function(old, now) {
     var elAbs = document.getElementById("pointerCoordAbs");
@@ -195,10 +199,12 @@ ECS.Systems.combatZoneGUI = {
   click: function(down, event) {
     if (this.c.combatZoneGUI.uiControled) {
       if (down) {
+        console.log("TOTO");
         switch (this.c.combatZoneGUI.state) {
           case "walk":
             var coord = this.c.combatZoneGUI.pointedCoordAbs;
             if (coord) {
+              console.log("TITI");
               this.em.send("clickOnTerrain", coord);
             }
             break;

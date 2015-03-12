@@ -92,6 +92,8 @@ ECS.Systems.combatZoneRules = {
   startTurn: function() {
     var turnEntUID = this.c.combatZoneRules.turnQueue[0];
     var turnEnt = this.c.entitiesList[turnEntUID];
+    console.info("START TURN: "+turnEnt.name);
+    turnEnt.c.movement.currentPoints = turnEnt.c.movement.maxPoints;
     if (this.c.combatZoneRules.teams[turnEntUID] === "Player") {
       ECS.Entities.addSystem(turnEnt, "uiControled");
       turnEnt.initSystem("uiControled");
@@ -106,6 +108,7 @@ ECS.Systems.combatZoneRules = {
     var turnEntUID = this.c.combatZoneRules.turnQueue.shift();
     this.c.combatZoneRules.turnQueue.push(turnEntUID);
     var turnEnt = this.c.entitiesList[turnEntUID];
+    console.info("END TURN: "+turnEnt.name);
     this.em.send("turnEnded", turnEnt);
   },
   setTurnQueue: function() {
