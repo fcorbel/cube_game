@@ -112,7 +112,7 @@ ECS.Systems.combatZoneRules = {
     var teams = this.c.combatZoneRules.teams;
     var turnQueue = this.c.combatZoneRules.turnQueue;
     for (var entUID in teams) {
-      turnQueue.push(entUID);
+      turnQueue.push(parseInt(entUID, 10));
     }
   },
   clean: function() {

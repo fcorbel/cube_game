@@ -71,6 +71,8 @@ ECS.Systems.combatZoneGUI = {
               "mouseClicked": "click",
               "turnStarted": "updateGUIStart",
               // "turnEnded": "updateGUIEnd",
+              "startAction": "enterInActionState",
+              "endAction": "leaveInActionState",
               "setGUIState": "setState",
               "updateLogic": "updateTurnEntInfos"},
   entityCallbacks: {},
@@ -103,23 +105,39 @@ ECS.Systems.combatZoneGUI = {
       this.c.combatZoneGUI.highlightMesh = null;
     }
     //set new state
-    var sys = ent.s[newState];
-    if (!sys) {
-      console.warn("No system available to set new state.");
-      return null;
-    }
-    if (sys.getTargetable) {
-      var highlightName = "defaultHighlight";
-      if (newState === "walk") {
-        highlightName = "moveHighlight";
+    if (newState !== "inAction") {
+      var sys = ent.s[newState];
+      if (!sys) {
+        console.warn("No system available to set new state.");
+        return null;
       }
-      var targetable = sys.getTargetable();
-      var mesh = Game.Graphics.getHighlightTilesMesh(targetable, highlightName);
-      this.c.appearance.scene.add(mesh);
-      this.c.combatZoneGUI.highlightMesh = mesh;
+      if (sys.getTargetable) {
+        var highlightName = "defaultHighlight";
+        if (newState === "walk") {
+          highlightName = "moveHighlight";
+        }
+        var targetable = sys.getTargetable();
+        var mesh = Game.Graphics.getHighlightTilesMesh(targetable, highlightName);
+        this.c.appearance.scene.add(mesh);
+        this.c.combatZoneGUI.highlightMesh = mesh;
+      }
     }
     this.c.combatZoneGUI.state = newState;
     console.debug("GUI state set to: "+newState);
+  },
+  enterInActionState: function(ent) {
+    if (ent.uid !== this.c.combatZoneRules.turnQueue[0]) {
+      console.error("An entity tried to do an action while it's not it's turn.");
+      return null;
+    }
+    this.s.combatZoneGUI.setState(ent, "inAction");
+  },
+  leaveInActionState: function(ent) {
+    if (ent.uid !== this.c.combatZoneRules.turnQueue[0]) {
+      console.error("An entity tried to leave an action while it's not it's turn.");
+      return null;
+    }
+    this.s.combatZoneGUI.setState(ent, "walk");
   },
   updateTurnQueueEl: function() {
     var domEl = document.getElementById("turnQueueOl");

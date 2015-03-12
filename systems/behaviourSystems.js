@@ -136,8 +136,10 @@ ECS.Systems.uiControled = {
       if (this.s.walk) {
         var em = this.em;
         var that = this;
+        em.send("startAction", that);
         this.s.walk.execute(coord, function() {
-          em.send("setGUIState", that, "walk");
+          em.send("endAction", that);
+          // em.send("setGUIState", that, "walk");
         });
       }
     } else {
@@ -163,7 +165,10 @@ ECS.Systems.aiControled = {
   think: function() {
     console.log(this.name+" is thinking...");
     var em = this.em;
+    var that = this;
+    em.send("startAction", that);
     this.s.aiControled.moveRandomly(function() {
+      em.send("endAction", that);
       em.send("endTurn");
       em.send("startTurn");
     });
