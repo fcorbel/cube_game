@@ -185,27 +185,6 @@ ECS.Systems.aiControled = {
       em.send("startTurn");
     });
   },
-  // moveRandomly: function(cbkS, cbkE) {
-  //   var dir = Math.floor(4*Math.random());
-  //   var voxCoord = this.c.position.vox;
-  //   var absCoord;
-  //   switch (dir) {
-  //     case 0:
-  //       absCoord = Game.Graphics.getAbsPosFromVoxPos([1,1,1], voxCoord[0]-1, voxCoord[1], voxCoord[2]);
-  //       return this.s.walk.execute(absCoord, cbkS, cbkE);
-  //     case 1:
-  //       absCoord = Game.Graphics.getAbsPosFromVoxPos([1,1,1], voxCoord[0]+1, voxCoord[1], voxCoord[2]);
-  //       return this.s.walk.execute(absCoord, cbkS, cbkE);
-  //     case 2:
-  //       absCoord = Game.Graphics.getAbsPosFromVoxPos([1,1,1], voxCoord[0], voxCoord[1], voxCoord[2]-1);
-  //       return this.s.walk.execute(absCoord, cbkS, cbkE);
-  //     case 3:
-  //       absCoord = Game.Graphics.getAbsPosFromVoxPos([1,1,1], voxCoord[0], voxCoord[1], voxCoord[2]+1);
-  //       return this.s.walk.execute(absCoord, cbkS, cbkE);
-  //     default:
-  //       console.warn("Don't know this direction...");
-  //   }
-  // },
   clean: function() {
   }
 };
