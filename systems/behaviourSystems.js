@@ -72,7 +72,7 @@ ECS.Systems.walk = {
   dependency: ["position", "associatedZone"],
   callbacks: {},
   entityCallbacks: {},
-  execute: function(absCoord, onStart, onFinish) {
+  execute: function(coord, onStart, onFinish) {
     if (!onFinish) {
       onFinish = function() {
         console.debug("Action finished");
@@ -80,25 +80,26 @@ ECS.Systems.walk = {
     }
     var mvtType = this.c.associatedZone.c.physicsRules.move;
     if (mvtType === "tile") {
-      var voxCoord = Game.Graphics.getVoxPosFromAbsPos([1,1,1], absCoord[0], absCoord[1], absCoord[2]);
-      if (Utils.arrayShallowEqual(voxCoord, this.c.position.vox)) {
+      // Then coord is voxCoord
+      if (Utils.arrayShallowEqual(coord, this.c.position.vox)) {
         return null;
       }
+      //TODO cette partie semble un peu foireuse
       // if (!this.c.movement.infiniteMvt) {
         var canGo = Game.Movement[mvtType].walk.getMovable(this, this.c.movement.currentPoints);
         var isIn = false;
         for (var i=0, l=canGo.length; i<l; i++) {
-          if (Utils.arrayShallowEqual(voxCoord, canGo[i])) {
+          if (Utils.arrayShallowEqual(coord, canGo[i])) {
             isIn = true;
             break;
           }
-        // }
+        }
         if (!isIn) {
-          console.warn("Can't go there, too far");
+          console.warn(JSON.stringify(coord)+ " is not in the targetable coords which are: "+ JSON.stringify(canGo));
           return null;
         }
-      }
-      var path = Game.Movement[mvtType].walk.getPath(this, voxCoord[0], voxCoord[1], voxCoord[2]);
+      // }
+      var path = Game.Movement[mvtType].walk.getPath(this, coord[0], coord[1], coord[2]);
       if (path) {
         onStart();
         path.pop(); //the last coord is the actual position
@@ -135,7 +136,7 @@ ECS.Systems.uiControled = {
       if (this.s.walk) {
         var em = this.em;
         var that = this;
-        this.s.walk.execute(coord, function() {
+        this.s.walk.execute(voxCoord, function() {
           em.send("startAction", that);
         },
         function() {
@@ -144,15 +145,15 @@ ECS.Systems.uiControled = {
         });
       }
     } else {
-      for (var i=0, l=uids.length; i<l; i++) {
-        var ent = this.c.associatedZone.c.entitiesList[uids[i]];
-        if (ent.type === "living") {
-          //TODO go next to it
-          if (this.s.talk) {
-            this.s.talk.execute(this.s.talk.getTargetable(), ent);
-          }
-        }
-      }
+      // for (var i=0, l=uids.length; i<l; i++) {
+      //   var ent = this.c.associatedZone.c.entitiesList[uids[i]];
+      //   if (ent.type === "living") {
+      //     //TODO go next to it
+      //     if (this.s.talk) {
+      //       this.s.talk.execute(this.s.talk.getTargetable(), ent);
+      //     }
+      //   }
+      // }
     }
   }
 };
@@ -165,42 +166,46 @@ ECS.Systems.aiControled = {
   },
   think: function() {
     console.log(this.name+" is thinking...");
+    var result = this.s.aiControled.moveRandomly();
+    if (!result) {
+      this.em.send("endTurn");
+      this.em.send("startTurn");
+    }
+  },
+  moveRandomly: function() {
     var em = this.em;
     var that = this;
-    var result = this.s.aiControled.moveRandomly(function() {
+    var targetable = this.s.walk.getTargetable();
+    var index = Math.floor(Math.random()*targetable.length);
+    return this.s.walk.execute(targetable[index], function() {
       em.send("startAction", that);
-    },
-    function() {
+    }, function() {
       em.send("endAction", that);
       em.send("endTurn");
       em.send("startTurn");
     });
-    if (!result) {
-      em.send("endTurn");
-      em.send("startTurn");
-    }
   },
-  moveRandomly: function(cbkS, cbkE) {
-    var dir = Math.floor(4*Math.random());
-    var voxCoord = this.c.position.vox;
-    var absCoord;
-    switch (dir) {
-      case 0:
-        absCoord = Game.Graphics.getAbsPosFromVoxPos([1,1,1], voxCoord[0]-1, voxCoord[1], voxCoord[2]);
-        return this.s.walk.execute(absCoord, cbkS, cbkE);
-      case 1:
-        absCoord = Game.Graphics.getAbsPosFromVoxPos([1,1,1], voxCoord[0]+1, voxCoord[1], voxCoord[2]);
-        return this.s.walk.execute(absCoord, cbkS, cbkE);
-      case 2:
-        absCoord = Game.Graphics.getAbsPosFromVoxPos([1,1,1], voxCoord[0], voxCoord[1], voxCoord[2]-1);
-        return this.s.walk.execute(absCoord, cbkS, cbkE);
-      case 3:
-        absCoord = Game.Graphics.getAbsPosFromVoxPos([1,1,1], voxCoord[0], voxCoord[1], voxCoord[2]+1);
-        return this.s.walk.execute(absCoord, cbkS, cbkE);
-      default:
-        console.warn("Don't know this direction...");
-    }
-  },
+  // moveRandomly: function(cbkS, cbkE) {
+  //   var dir = Math.floor(4*Math.random());
+  //   var voxCoord = this.c.position.vox;
+  //   var absCoord;
+  //   switch (dir) {
+  //     case 0:
+  //       absCoord = Game.Graphics.getAbsPosFromVoxPos([1,1,1], voxCoord[0]-1, voxCoord[1], voxCoord[2]);
+  //       return this.s.walk.execute(absCoord, cbkS, cbkE);
+  //     case 1:
+  //       absCoord = Game.Graphics.getAbsPosFromVoxPos([1,1,1], voxCoord[0]+1, voxCoord[1], voxCoord[2]);
+  //       return this.s.walk.execute(absCoord, cbkS, cbkE);
+  //     case 2:
+  //       absCoord = Game.Graphics.getAbsPosFromVoxPos([1,1,1], voxCoord[0], voxCoord[1], voxCoord[2]-1);
+  //       return this.s.walk.execute(absCoord, cbkS, cbkE);
+  //     case 3:
+  //       absCoord = Game.Graphics.getAbsPosFromVoxPos([1,1,1], voxCoord[0], voxCoord[1], voxCoord[2]+1);
+  //       return this.s.walk.execute(absCoord, cbkS, cbkE);
+  //     default:
+  //       console.warn("Don't know this direction...");
+  //   }
+  // },
   clean: function() {
   }
 };
