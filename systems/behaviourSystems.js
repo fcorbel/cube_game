@@ -129,7 +129,6 @@ ECS.Systems.uiControled = {
   callbacks: {"clickOnTerrain": "click"},
   entityCallbacks: {},
   click: function(coord) {
-    console.info("Clicked on terrain: "+JSON.stringify(coord));
     //check what is clicked on to know what do do:move, talk, action,...
     var voxCoord = Game.Graphics.getVoxPosFromAbsPos([1, 1, 1], coord[0], coord[1], coord[2]);
     var uids = this.c.associatedZone.c.container.get(voxCoord[0], voxCoord[1], voxCoord[2]);

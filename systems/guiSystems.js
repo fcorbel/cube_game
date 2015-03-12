@@ -199,12 +199,10 @@ ECS.Systems.combatZoneGUI = {
   click: function(down, event) {
     if (this.c.combatZoneGUI.uiControled) {
       if (down) {
-        console.log("TOTO");
         switch (this.c.combatZoneGUI.state) {
           case "walk":
             var coord = this.c.combatZoneGUI.pointedCoordAbs;
             if (coord) {
-              console.log("TITI");
               this.em.send("clickOnTerrain", coord);
             }
             break;

@@ -144,6 +144,16 @@ ECS.Entities.addSystem = function(ent, sysName) {
   }
 };
 
+ECS.Entities.removeSystem = function(ent, sysName) {
+  var sys = ECS.Systems[sysName];
+  if (sys) {
+    ent.cleanSystem(sysName);
+    delete ent.s[sysName];
+  } else {
+    console.warn("No system named: " + sysName + ", can't remove.");
+  }
+};
+
 ECS.Entities.serialize = function(ent) {
   var entInfos = {};
   entInfos.type = ent.type;

@@ -108,6 +108,11 @@ ECS.Systems.combatZoneRules = {
     var turnEntUID = this.c.combatZoneRules.turnQueue.shift();
     this.c.combatZoneRules.turnQueue.push(turnEntUID);
     var turnEnt = this.c.entitiesList[turnEntUID];
+    if (this.c.combatZoneRules.teams[turnEntUID] === "Player") {
+      ECS.Entities.removeSystem(turnEnt, "uiControled");
+    } else {
+      ECS.Entities.removeSystem(turnEnt, "aiControled");
+    }
     console.info("END TURN: "+turnEnt.name);
     this.em.send("turnEnded", turnEnt);
   },
