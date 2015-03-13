@@ -90,6 +90,7 @@ ECS.Systems.combatZoneGUI = {
   },
   updateGUIOnStart: function(ent) {
     this.s.combatZoneGUI.updateTurnQueueEl();
+    this.s.combatZoneGUI.updateActionsList(ent);
     this.s.combatZoneGUI.setState(ent, "walk");
     if (ent.s.uiControled) {
       this.c.combatZoneGUI.uiControled = true;
@@ -149,6 +150,27 @@ ECS.Systems.combatZoneGUI = {
         liEl.innerHTML = ent.name;
         domEl.appendChild(liEl);
       }
+    }
+  },
+  updateActionsList: function(ent) {
+    //get actions for current ent
+    var alEl = document.getElementById("actionsList");
+    alEl.innerHTML = "";
+    var actions = [];
+    for (var sys in ent.s) {
+      
+      if (ECS.Systems[sys].type === "action") {
+        actions.push(sys);
+      }
+    }
+    if (actions.length > 0) {
+      var frag = document.createDocumentFragment();
+      for (var i=0, l=actions.length; i < l; i++) {
+        var aEl = document.createElement("li");
+        aEl.innerHTML = actions[i];
+        frag.appendChild(aEl);
+      }
+      alEl.appendChild(frag);
     }
   },
   updateTurnEntInfos: function() {

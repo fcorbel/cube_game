@@ -276,7 +276,7 @@ ECS.Entities.Tpl.averageGuy = {
       // infiniteMvt: false
     }
   },
-  sys: ["storedInZoneContainer", "drawEntity", "walk", "talk"]
+  sys: ["storedInZoneContainer", "drawEntity", "walk", "talk", "dance"]
 };
 
 ECS.Entities.Tpl.mouse = {

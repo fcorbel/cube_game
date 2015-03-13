@@ -69,6 +69,7 @@ ECS.Systems = ECS.Systems || {};
 //   }
 // };
 ECS.Systems.walk = {
+  type: "action",
   dependency: ["position", "associatedZone"],
   callbacks: {},
   entityCallbacks: {},

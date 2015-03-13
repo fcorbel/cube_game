@@ -12,6 +12,7 @@ ECS.Systems = ECS.Systems || {};
 
 
 ECS.Systems.talk = {
+  type: "action",
   dependency: [],
   callbacks: {},
   entityCallbacks: {},
