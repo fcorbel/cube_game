@@ -167,24 +167,33 @@ ECS.Systems.combatZoneGUI = {
   updatePointerCoord: function(old, now) {
     var elAbs = document.getElementById("pointerCoordAbs");
     var elVox = document.getElementById("pointerCoordVox");
-    if (now) {
-      var nowVox = Game.Graphics.getVoxPosFromAbsPos([1,1,1], now[0], now[1], now[2]);
-      elAbs.innerHTML = now;
-      elVox.innerHTML = nowVox;
-      this.c.combatZoneGUI.pointedCoordAbs = now;
-      if (!this.c.combatZoneGUI.pointedCoordVox || !Utils.arrayShallowEqual(this.c.combatZoneGUI.pointedCoordVox, nowVox)){
-        this.s.combatZoneGUI.movePointerIndicator(nowVox[0], nowVox[1], nowVox[2]);
-        this.c.combatZoneGUI.pointedCoordVox = nowVox;
-      }
-    } else{
+    var that = this;
+    function pointAtNothing() {
       elAbs.innerHTML = "";
       elVox.innerHTML = "";
-      this.c.combatZoneGUI.pointedCoordAbs = null;
-      this.c.combatZoneGUI.pointedCoordVox = null;
-      var mesh = this.c.combatZoneGUI.pointerIndicatorMesh;
+      that.c.combatZoneGUI.pointedCoordAbs = null;
+      that.c.combatZoneGUI.pointedCoordVox = null;
+      var mesh = that.c.combatZoneGUI.pointerIndicatorMesh;
       if (mesh) {
         mesh.visible = false;
       }
+    }
+    if (now) {
+      //check for edge case
+      var nowVox = Game.Graphics.getVoxPosFromAbsPos([1,1,1], now[0], now[1], now[2]);
+      if (!this.c.container.inRange(nowVox[0], nowVox[1], nowVox[2])) {
+        pointAtNothing();
+      } else {
+        elAbs.innerHTML = now;
+        elVox.innerHTML = nowVox;
+        this.c.combatZoneGUI.pointedCoordAbs = now;
+        if (!this.c.combatZoneGUI.pointedCoordVox || !Utils.arrayShallowEqual(this.c.combatZoneGUI.pointedCoordVox, nowVox)){
+          this.s.combatZoneGUI.movePointerIndicator(nowVox[0], nowVox[1], nowVox[2]);
+          this.c.combatZoneGUI.pointedCoordVox = nowVox;
+        }
+      }
+    } else{
+      pointAtNothing();
     }
   },
   movePointerIndicator: function(x, y, z) {

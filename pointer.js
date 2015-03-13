@@ -46,7 +46,6 @@ Game.createPointer = function(em_, cam) {
   };
   
   p.move = function(event) {
-    em_.send("TOTO");
     if (!event.target.classList.contains("background")) { //Don't do anyrhing if mouse on gui
       return;
     }
