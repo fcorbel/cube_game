@@ -69,8 +69,8 @@ ECS.Systems.combatZoneGUI = {
   dependency: ["combatZoneGUI", "combatZoneRules"],
   callbacks: {"pointedCoordChanged": "updatePointerCoord",
               "mouseClicked": "click",
-              "turnStarted": "updateGUIStart",
-              // "turnEnded": "updateGUIEnd",
+              "turnStarted": "updateGUIOnStart",
+              // "turnEnded": "updateGUIOnEnd",
               "startAction": "enterInActionState",
               "endAction": "leaveInActionState",
               "setGUIState": "setState",
@@ -88,7 +88,7 @@ ECS.Systems.combatZoneGUI = {
       em.send("startTurn");
     };
   },
-  updateGUIStart: function(ent) {
+  updateGUIOnStart: function(ent) {
     this.s.combatZoneGUI.updateTurnQueueEl();
     this.s.combatZoneGUI.setState(ent, "walk");
     if (ent.s.uiControled) {
@@ -97,7 +97,6 @@ ECS.Systems.combatZoneGUI = {
       this.c.combatZoneGUI.uiControled = false;
     }
   },
-  //TODO create a state "acting" to represent the fact tha its doing something
   setState: function(ent, newState) {
     //clean previous state
     if (this.c.combatZoneGUI.highlightMesh) {
@@ -182,6 +181,10 @@ ECS.Systems.combatZoneGUI = {
       elVox.innerHTML = "";
       this.c.combatZoneGUI.pointedCoordAbs = null;
       this.c.combatZoneGUI.pointedCoordVox = null;
+      var mesh = this.c.combatZoneGUI.pointerIndicatorMesh;
+      if (mesh) {
+        mesh.visible = false;
+      }
     }
   },
   movePointerIndicator: function(x, y, z) {
@@ -190,6 +193,10 @@ ECS.Systems.combatZoneGUI = {
       mesh = Game.Graphics.meshFactory.get("pointerIndicator");
       this.c.combatZoneGUI.pointerIndicatorMesh = mesh;
       this.c.appearance.scene.add(mesh);
+    } else {
+      if (!mesh.visible) {
+        mesh.visible = true;
+      }
     }
     var absPos = Game.Graphics.getAbsPosFromVoxPos([1,1,1], x, y, z);
     mesh.position.x = absPos[0];
