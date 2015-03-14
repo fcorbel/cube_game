@@ -274,6 +274,7 @@ ECS.Systems.worldZoneGUI = {
     globEl.style.display = "initial";
   },
   updatePointerCoord: function(old, now) {
+    // console.log("Mouse coord update from: "+JSON.stringify(old)+" to: "+JSON.stringify(now));
     var elAbs = document.getElementById("pointerCoordAbs");
     var elVox = document.getElementById("pointerCoordVox");
     var that = this;

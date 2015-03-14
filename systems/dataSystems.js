@@ -149,6 +149,7 @@ ECS.Systems.dataLoader = {
       for (var j=0; j<data.sizeZ; j++) {
         if (i>=xMargin && i<x-xMargin && j>=zMargin && j<z-zMargin) {
           this.s.dataLoader.addTerrainEnt("grass", i, 0, j);
+          this.s.dataLoader.addTerrainEnt("grass", i, 1, j);
         } else {
           this.s.dataLoader.addTerrainEnt("water", i, 0, j);
         }

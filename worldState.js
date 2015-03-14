@@ -60,7 +60,7 @@ Game.States.createWorld = function() {
   state.zone = Factories.fac.create("worldZone", state.em);
   state.zone.c.appearance.scene = sceneInfos.scene;
   // state.zone.s.dataLoader.loadOcean(5, 2, 5);
-  state.zone.s.dataLoader.loadIsland(5, 2, 5);
+  state.zone.s.dataLoader.loadIsland(5, 3, 5);
 
   // Entities
   var player = Factories.fac.create("defaultBoat", state.em);
