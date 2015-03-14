@@ -204,11 +204,14 @@ Game.Graphics.createChunkOneMeshSurface = function(startP, endP, data, entList) 
               dummy.position.x = x*Game.Graphics.voxelSize.x + (Game.Graphics.voxelSize.x*(meshSize[0]-1)/2);
               dummy.position.y = y*Game.Graphics.voxelSize.y + (Game.Graphics.voxelSize.y*(meshSize[1]-1)/2);
               dummy.position.z = z*Game.Graphics.voxelSize.z + (Game.Graphics.voxelSize.z*(meshSize[2]-1)/2);
-              var fNames = Game.Graphics.getFacesToDraw(x,y,z,data, entList);
+              var fNames = Game.Graphics.getFacesToDraw(el,x,y,z,data, entList);
               for (var j=0; j<fNames.length; j++) {
                 if (fNames[j] === "getPY") { //don't draw faces at the bottom
                   continue;
                 }
+                // if (el.name === "water" && (fNames[j] === "get)) {
+                //   continue;
+                // }
                 dummy.geometry = Game.Graphics.geoFactory[fNames[j]](meshName);
                 THREE.GeometryUtils.merge(chunkGeo, dummy);
               }
@@ -223,7 +226,7 @@ Game.Graphics.createChunkOneMeshSurface = function(startP, endP, data, entList) 
   return mesh;
 };
 
-Game.Graphics.getFacesToDraw = function(x, y, z, data, entList) {
+Game.Graphics.getFacesToDraw = function(el, x, y, z, data, entList) {
   var fNames = ["getNX", "getPX", "getNY", "getPY", "getNZ", "getPZ"];
   var facesList = [];
   var ngb;
@@ -236,7 +239,7 @@ Game.Graphics.getFacesToDraw = function(x, y, z, data, entList) {
     if (uids) {
       for (i=0; i<uids.length; i++) {
         ngb =  entList[uids[i]];
-        if (ngb.c.appearance.oppacity === 1 && ngb.type === "terrain") {
+        if ((ngb.c.appearance.oppacity === 1 && ngb.type === "terrain") || ngb.name === el.name) {
           draw = false;
           break;
         }
@@ -253,7 +256,7 @@ Game.Graphics.getFacesToDraw = function(x, y, z, data, entList) {
     if (uids) {
       for (i=0; i<uids.length; i++) {
         ngb =  entList[uids[i]];
-        if (ngb.c.appearance.oppacity === 1 && ngb.type === "terrain") {
+        if ((ngb.c.appearance.oppacity === 1 && ngb.type === "terrain") || ngb.name === el.name) {
           draw = false;
           break;
         }
@@ -270,7 +273,7 @@ Game.Graphics.getFacesToDraw = function(x, y, z, data, entList) {
     if (uids) {
       for (i=0; i<uids.length; i++) {
         ngb =  entList[uids[i]];
-        if (ngb.c.appearance.oppacity === 1 && ngb.type === "terrain") {
+        if ((ngb.c.appearance.oppacity === 1 && ngb.type === "terrain") || ngb.name === el.name) {
           draw = false;
           break;
         }
@@ -287,7 +290,7 @@ Game.Graphics.getFacesToDraw = function(x, y, z, data, entList) {
     if (uids) {
       for (i=0; i<uids.length; i++) {
         ngb =  entList[uids[i]];
-        if (ngb.c.appearance.oppacity === 1 && ngb.type === "terrain") {
+        if ((ngb.c.appearance.oppacity === 1 && ngb.type === "terrain") || ngb.name === el.name) {
           draw = false;
           break;
         }
@@ -304,7 +307,7 @@ Game.Graphics.getFacesToDraw = function(x, y, z, data, entList) {
     if (uids) {
       for (i=0; i<uids.length; i++) {
         ngb =  entList[uids[i]];
-        if (ngb.c.appearance.oppacity === 1 && ngb.type === "terrain") {
+        if ((ngb.c.appearance.oppacity === 1 && ngb.type === "terrain") || ngb.name === el.name) {
           draw = false;
           break;
         }
@@ -321,7 +324,7 @@ Game.Graphics.getFacesToDraw = function(x, y, z, data, entList) {
     if (uids) {
       for (i=0; i<uids.length; i++) {
         ngb =  entList[uids[i]];
-        if (ngb.c.appearance.oppacity === 1 && ngb.type === "terrain") {
+        if ((ngb.c.appearance.oppacity === 1 && ngb.type === "terrain") || ngb.name === el.name) {
           draw = false;
           break;
         }
