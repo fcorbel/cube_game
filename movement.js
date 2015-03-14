@@ -3,7 +3,7 @@ Game.Movement = Game.Movement || {};
 
 Game.Movement.move = {
     go: function(ent, voxCoord, cbk) {
-    console.log("go to: "+JSON.stringify(voxCoord));
+    // console.log("go to: "+JSON.stringify(voxCoord));
     if (!ent.c.movement.infiniteMvt) {
       ent.c.movement.currentPoints -= 1;
     }
@@ -327,7 +327,7 @@ Game.Movement.goToVox = function(ent, x, y, z, speed, cbk) {
 
       var absPos = ent.c.position.abs;
       var newAbsPos = Game.Graphics.getAbsPosFromVoxPos(ent.c.size, x, y, z);
-      console.log("go from "+absPos+" to "+newAbsPos);
+      // console.log("go from "+absPos+" to "+newAbsPos);
       // Do some smooth animation
       if (speed) {
         ent.c.movement.isMoving = true;

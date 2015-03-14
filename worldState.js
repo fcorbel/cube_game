@@ -59,7 +59,8 @@ Game.States.createWorld = function() {
   //Zone
   state.zone = Factories.fac.create("worldZone", state.em);
   state.zone.c.appearance.scene = sceneInfos.scene;
-  state.zone.s.dataLoader.loadOcean(5, 2, 5);
+  // state.zone.s.dataLoader.loadOcean(5, 2, 5);
+  state.zone.s.dataLoader.loadIsland(5, 2, 5);
 
   // Entities
   var player = Factories.fac.create("defaultBoat", state.em);
@@ -72,6 +73,7 @@ Game.States.createWorld = function() {
   //////////////////
   state.zone.initSystems();
 
+  camera.focusPoint = player.c.position.abs;
 
   var domEl = document.getElementById("screen");
   domEl.appendChild(sceneInfos.renderer.domElement);

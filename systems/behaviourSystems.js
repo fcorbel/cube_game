@@ -13,17 +13,19 @@ ECS.Systems.move = {
         return null;
       }
       //Can I really go there?
-      var targetable = this.s.move.getTargetable();
-      var isIn = false;
-      for (var i=0, l=targetable.length; i<l; i++) {
-        if (Utils.arrayShallowEqual(coord, targetable[i])) {
-          isIn = true;
-          break;
+      if (!this.c.movement.infiniteMvt) {
+        var targetable = this.s.move.getTargetable();
+        var isIn = false;
+        for (var i=0, l=targetable.length; i<l; i++) {
+          if (Utils.arrayShallowEqual(coord, targetable[i])) {
+            isIn = true;
+            break;
+          }
         }
-      }
-      if (!isIn) {
-        console.warn(JSON.stringify(coord)+ " is not in the targetable coords which are: "+ JSON.stringify(targetable));
-        return null;
+        if (!isIn) {
+          console.warn(JSON.stringify(coord)+ " is not in the targetable coords which are: "+ JSON.stringify(targetable));
+          return null;
+        }
       }
       //Create path and move
       var path = Game.Movement.move.getPath(this, coord[0], coord[1], coord[2]);

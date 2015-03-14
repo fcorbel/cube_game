@@ -41,7 +41,7 @@ ECS.Components.movement = function() {
     isMoving: false,
     maxPoints: 1,
     currentPoints: 1,
-    infiniteMvt: true
+    infiniteMvt: true //don't care about movement points
   };
 };
 

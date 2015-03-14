@@ -138,6 +138,25 @@ ECS.Systems.dataLoader = {
     }
   },
 
+  loadIsland: function(x, y, z) {
+    //create a simple island
+    var xMargin = 1;
+    var zMargin = 1;
+    var data = Tools.Containers.create3dContainer(x, y, z, []);
+    this.c.container = data;
+    var scene = this.c.appearance.scene;
+    for (var i=0; i<data.sizeX; i++){
+      for (var j=0; j<data.sizeZ; j++) {
+        if (i>=xMargin && i<x-xMargin && j>=zMargin && j<z-zMargin) {
+          this.s.dataLoader.addTerrainEnt("grass", i, 0, j);
+        } else {
+          this.s.dataLoader.addTerrainEnt("water", i, 0, j);
+        }
+      }
+    }
+
+  },
+
   loadStairs: function() {
     var data = Tools.Containers.create3dContainer(10, 20, 6, []);
     this.c.container = data;
