@@ -195,6 +195,19 @@ ECS.Entities.Tpl.defaultZone = {
   sys: ["dataLoader", "drawZone", "sunLighting", "physicsRules", "defaultZoneGUI"]
 };
 
+ECS.Entities.Tpl.worldZone = {
+  type: "zone",
+  name: "worldZone",
+  comp: {
+    container: true,
+    entitiesList: true,
+    appearance:true,
+    defaultZoneGUI: true,
+    physicsRules: true
+  },
+  sys: ["dataLoader", "drawZone", "sunLighting", "physicsRules"]
+};
+
 ECS.Entities.Tpl.combatZone = {
   type: "zone",
   name: "combatZone",

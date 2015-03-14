@@ -75,6 +75,7 @@
   <script src="zoneState.js"></script>
   <script src="conversationState.js"></script>
   <script src="combatState.js"></script>
+  <script src="worldState.js"></script>
   <script src="defaultZoneGUI.js"></script>
   <script src="pointer.js"></script>
   <script src="movement.js"></script>
@@ -95,7 +96,8 @@
     document.addEventListener("keyup", stateManager.handleKeyboardUp, false);
 
     // stateManager.pushState(Game.States.createZone());
-    stateManager.pushState(Game.States.createCombat());
+    // stateManager.pushState(Game.States.createCombat());
+    stateManager.pushState(Game.States.createWorld());
     // stateManager.pushState(Game.States.createEditor());
 
     // Game loop
