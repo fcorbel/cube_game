@@ -14,7 +14,7 @@ ECS.Systems.physicsRules = {
           //check for impossible to be voxel (ex:solid, null...)
           var voxPos = [x+i, y+j, z+k];
           //out of the zone
-          if (voxPos[0]<0 || voxPos[1]<0 || voxPos[2]<0 || voxPos[0]>=data.sizeX || voxPos[1]>=data.sizeY || voxPos[2]>=data.sizeZ) {
+          if (!data.inRange(voxPos[0], voxPos[1], voxPos[2])){
             // console.debug("Can't be there, out of zone: "+ voxPos);
             return false;
           }
@@ -27,6 +27,10 @@ ECS.Systems.physicsRules = {
                 if (target.c.consistence === 1) {
                   // console.debug("Can't go there: solid against solid: "+ voxPos + " = "+target.name);
                   return false;
+                } else {
+                  if (this.c.entitiesList[uid].c.floating) {
+                    return false;
+                  }
                 }
               }
             }

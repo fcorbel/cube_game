@@ -209,9 +209,6 @@ Game.Graphics.createChunkOneMeshSurface = function(startP, endP, data, entList) 
                 if (fNames[j] === "getPY") { //don't draw faces at the bottom
                   continue;
                 }
-                // if (el.name === "water" && (fNames[j] === "get)) {
-                //   continue;
-                // }
                 dummy.geometry = Game.Graphics.geoFactory[fNames[j]](meshName);
                 THREE.GeometryUtils.merge(chunkGeo, dummy);
               }

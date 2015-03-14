@@ -127,6 +127,17 @@ ECS.Systems.dataLoader = {
     }
   },
 
+  loadOcean: function(x, y, z) {
+    var data = Tools.Containers.create3dContainer(x, y, z, []);
+    this.c.container = data;
+    var scene = this.c.appearance.scene;
+    for (var i=0; i<data.sizeX; i++){
+      for (var j=0; j<data.sizeZ; j++) {
+        this.s.dataLoader.addTerrainEnt("water", i, 0, j);
+      }
+    }
+  },
+
   loadStairs: function() {
     var data = Tools.Containers.create3dContainer(10, 20, 6, []);
     this.c.container = data;
@@ -171,6 +182,9 @@ ECS.Systems.storedInZoneContainer = {
     // console.group("Store in container");
     // console.debug("Store "+this.name+" at: "+x+","+y+","+z);
     var size = this.c.size;
+    if (!this.s.storedInZoneContainer.fitIn(cont, size, x, y, z)) {
+      console.error("Entity:"+this.name+" is too big to be stored at: "+x+","+y+","+z);
+    }
     for (var i=0; i<size[0]; i++) {
       for (var j=0; j<size[1]; j++) {
         for (var k=0; k<size[2]; k++) {
@@ -211,6 +225,13 @@ ECS.Systems.storedInZoneContainer = {
     var pos = this.c.position.vox;
     var size = this.c.size;
     if (x>=pos[0] && x<pos[0]+size[0] && y>=pos[1] && y<pos[1]+size[1] && z>=pos[2] && z<pos[2]+size[2]) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+  fitIn: function(cont, size,  x, y, z) {
+    if (cont.inRange(x, y, z) && cont.inRange(x+size[0]-1, y+size[1]-1, z+size[2]-1)) {
       return true;
     } else {
       return false;

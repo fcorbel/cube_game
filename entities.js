@@ -286,7 +286,6 @@ ECS.Entities.Tpl.averageGuy = {
     movement: {
       maxPoints: 2,
       currentPoints: 2
-      // infiniteMvt: false
     }
   },
   sys: ["storedInZoneContainer", "drawEntity", "walk", "talk", "dance"]
@@ -305,6 +304,24 @@ ECS.Entities.Tpl.mouse = {
     position: true,
     associatedZone: true,
     movement: true
+  },
+  sys: ["storedInZoneContainer", "drawEntity", "walk"]
+};
+
+ECS.Entities.Tpl.defaultBoat = {
+  type: "living",
+  name: "defaultBoat",
+  comp: {
+    appearance: {
+      meshName: "mouse",
+    },
+    consistence: 1,
+    weight: 4,
+    size: [1, 1, 1],
+    position: true,
+    associatedZone: true,
+    movement: true,
+    floating: true
   },
   sys: ["storedInZoneContainer", "drawEntity", "walk"]
 };

@@ -92,3 +92,7 @@ ECS.Components.physicsRules = function() {
 ECS.Components.conversation = function() {
   return [];
 };
+
+ECS.Components.floating = function() {
+  return true;
+};
