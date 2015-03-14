@@ -80,7 +80,7 @@ Game.Graphics.createCamera = function(em) {
   });
 
   em.register("mouseWheel", function(event) {
-    if (event.target.classList.contains("background")) {
+    if (event.target.classList.contains("background") || event.target.tagName === "CANVAS") {
       var newDist = cam.distance + cam.zoomSpeed * event.deltaY;
       cam.distance = Math.min(Math.max(newDist, cam.minDistance), cam.maxDistance);
     }
