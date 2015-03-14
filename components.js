@@ -1,6 +1,9 @@
 var ECS = ECS || {};
 ECS.Components = ECS.Components || {};
 
+///////////////////////
+// For generic entities
+///////////////////////
 ECS.Components.size = function() {
   return [1, 1, 1];
 };
@@ -22,6 +25,10 @@ ECS.Components.weight = function() {
   return 0;
 };
 
+ECS.Components.canBeAt = function() {
+  return []; //List of entities name (water, earth,...)
+};
+
 ECS.Components.position = function() {
   return {
     abs: [0, 0, 0], //this should be the center point of the mesh
@@ -38,16 +45,26 @@ ECS.Components.movement = function() {
   };
 };
 
+ECS.Components.associatedZone = function() {
+  return null;
+};
+
+//{type: "say|ask", content: "", choices={}}
+ECS.Components.conversation = function() {
+  return [];
+};
+
+
+
+///////////////////////
+// For zone entities
+///////////////////////
 ECS.Components.container = function() {
   return null;
 };
 
 ECS.Components.entitiesList = function() {
   return {};
-};
-
-ECS.Components.associatedZone = function() {
-  return null;
 };
 
 ECS.Components.defaultZoneGUI = function() {
@@ -74,6 +91,16 @@ ECS.Components.combatZoneGUI = function() {
   };
 };
 
+ECS.Components.worldZoneGUI = function() {
+  return {
+    domName: "worldZoneGUI",
+    pointedCoordAbs: null,
+    pointedCoordVox: null,
+    pointerIndicatorMesh: null,
+    // highlightMesh: null,
+  };
+};
+
 ECS.Components.combatZoneRules = function() {
   return {
     turnQueue: [],
@@ -86,13 +113,4 @@ ECS.Components.physicsRules = function() {
     move: "tile",
     gravity: 100
   };
-};
-
-//{type: "say|ask", content: "", choices={}}
-ECS.Components.conversation = function() {
-  return [];
-};
-
-ECS.Components.floating = function() {
-  return true;
 };

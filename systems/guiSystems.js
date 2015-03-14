@@ -259,3 +259,80 @@ ECS.Systems.combatZoneGUI = {
   }
 
 };
+
+ECS.Systems.worldZoneGUI = {
+  dependency: ["worldZoneGUI"],
+  callbacks: {"pointedCoordChanged": "updatePointerCoord",
+              "mouseClicked": "click",
+              // "startAction": "enterInActionState",
+              // "endAction": "leaveInActionState",
+              // "setGUIState": "setState",
+              /* "updateLogic": "updateTurnEntInfos" */},
+  entityCallbacks: {},
+  init: function() {
+    var globEl = document.getElementById("globalGUI");
+    globEl.style.display = "initial";
+  },
+  updatePointerCoord: function(old, now) {
+    var elAbs = document.getElementById("pointerCoordAbs");
+    var elVox = document.getElementById("pointerCoordVox");
+    var that = this;
+    function pointAtNothing() {
+      elAbs.innerHTML = "";
+      elVox.innerHTML = "";
+      that.c.worldZoneGUI.pointedCoordAbs = null;
+      that.c.worldZoneGUI.pointedCoordVox = null;
+      var mesh = that.c.worldZoneGUI.pointerIndicatorMesh;
+      if (mesh) {
+        mesh.visible = false;
+      }
+    }
+    if (now) {
+      //check for edge case
+      var nowVox = Game.Graphics.getVoxPosFromAbsPos([1,1,1], now[0], now[1], now[2]);
+      if (!this.c.container.inRange(nowVox[0], nowVox[1], nowVox[2])) {
+        pointAtNothing();
+      } else {
+        elAbs.innerHTML = now;
+        elVox.innerHTML = nowVox;
+        this.c.worldZoneGUI.pointedCoordAbs = now;
+        if (!this.c.worldZoneGUI.pointedCoordVox || !Utils.arrayShallowEqual(this.c.worldZoneGUI.pointedCoordVox, nowVox)){
+          this.s.worldZoneGUI.movePointerIndicator(nowVox[0], nowVox[1], nowVox[2]);
+          this.c.worldZoneGUI.pointedCoordVox = nowVox;
+        }
+      }
+    } else{
+      pointAtNothing();
+    }
+  },
+  movePointerIndicator: function(x, y, z) {
+    var mesh = this.c.worldZoneGUI.pointerIndicatorMesh;
+    if (!mesh) {
+      mesh = Game.Graphics.meshFactory.get("pointerIndicator");
+      this.c.worldZoneGUI.pointerIndicatorMesh = mesh;
+      this.c.appearance.scene.add(mesh);
+    } else {
+      if (!mesh.visible) {
+        mesh.visible = true;
+      }
+    }
+    var absPos = Game.Graphics.getAbsPosFromVoxPos([1,1,1], x, y, z);
+    mesh.position.x = absPos[0];
+    mesh.position.y = absPos[1];
+    mesh.position.z = absPos[2];
+  },
+  click: function(down, event) {
+    if (down) {
+      var coord = this.c.worldZoneGUI.pointedCoordAbs;
+      if (coord) {
+        this.em.send("clickOnTerrain", coord);
+      }
+    }
+  },
+
+  clean: function() {
+    var globEl = document.getElementById("globalGUI");
+    globEl.style.display = "hidden";
+  }
+
+};

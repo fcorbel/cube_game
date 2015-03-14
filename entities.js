@@ -202,10 +202,10 @@ ECS.Entities.Tpl.worldZone = {
     container: true,
     entitiesList: true,
     appearance:true,
-    defaultZoneGUI: true,
+    worldZoneGUI: true,
     physicsRules: true
   },
-  sys: ["dataLoader", "drawZone", "sunLighting", "physicsRules"]
+  sys: ["dataLoader", "drawZone", "sunLighting", "physicsRules", "worldZoneGUI"]
 };
 
 ECS.Entities.Tpl.combatZone = {
@@ -323,5 +323,5 @@ ECS.Entities.Tpl.defaultBoat = {
     movement: true,
     floating: true
   },
-  sys: ["storedInZoneContainer", "drawEntity", "walk"]
+  sys: ["storedInZoneContainer", "drawEntity", "move"]
 };

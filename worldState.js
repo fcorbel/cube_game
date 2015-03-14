@@ -65,6 +65,7 @@ Game.States.createWorld = function() {
   var player = Factories.fac.create("defaultBoat", state.em);
   player.c.appearance.scene = sceneInfos.scene;
   state.zone.s.dataLoader.addEntity(player, 0, 1, 0);
+  ECS.Entities.addSystem(player, "uiControled");
 
   //////////////////
   // Specific to world state

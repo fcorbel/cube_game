@@ -5,32 +5,28 @@ ECS.Systems.physicsRules = {
   dependency: ["container", "physicsRules"],
   callbacks: {/* "moved": "topMoveToo" */},
   entityCallbacks: {},
-  canBeAt: function(uid, size, consistence, x, y, z) {
-    // console.log("check:"+pos.x+","+pos.y+","+pos.z);
+  canBeAt: function(uid, size, canBeList, x, y, z) {
+    // console.log("check:"+x+","+y+","+z);
     var data = this.c.container;
     for (var i=0; i<size[0]; i++) {
       for (var j=0; j<size[1]; j++) {
         for (var k=0; k<size[2]; k++) {
-          //check for impossible to be voxel (ex:solid, null...)
           var voxPos = [x+i, y+j, z+k];
-          //out of the zone
+          //out of the map
           if (!data.inRange(voxPos[0], voxPos[1], voxPos[2])){
             // console.debug("Can't be there, out of zone: "+ voxPos);
             return false;
           }
           var targetsUID = data.get(voxPos[0], voxPos[1], voxPos[2]);
-          for (var t=0; t<targetsUID.length; t++) {
-            if (targetsUID[t] !== uid) { //Can still be where ent is itself
-              var target = this.c.entitiesList[targetsUID[t]];
-              //empty voxel
-              if (consistence > 0) {
-                if (target.c.consistence === 1) {
-                  // console.debug("Can't go there: solid against solid: "+ voxPos + " = "+target.name);
+          if (targetsUID) {
+            for (var t=0; t<targetsUID.length; t++) {
+              if (targetsUID[t] !== uid) { //Can still be where ent is itself
+                var target = this.c.entitiesList[targetsUID[t]];
+                // not in the canBe list
+
+                if (!canBeList || (canBeList &&canBeList.indexOf(target.name) === -1)) {
+                  console.debug("Can't go there, not in the canBe list: "+ voxPos + " = "+target.name);
                   return false;
-                } else {
-                  if (this.c.entitiesList[uid].c.floating) {
-                    return false;
-                  }
                 }
               }
             }

@@ -1,6 +1,60 @@
 var ECS = ECS || {};
 ECS.Systems = ECS.Systems || {};
 
+ECS.Systems.move = {
+  dependency: ["position", "associatedZone"],
+  callbacks: {},
+  entityCallbacks: {},
+  execute: function(coord, onStart, onFinish) {
+    var mvtType = this.c.associatedZone.c.physicsRules.move;
+    if (mvtType === "tile") {
+      // Then coord is voxCoord
+      if (Utils.arrayShallowEqual(coord, this.c.position.vox)) {
+        return null;
+      }
+      //Can I really go there?
+      var targetable = this.s.move.getTargetable();
+      var isIn = false;
+      for (var i=0, l=targetable.length; i<l; i++) {
+        if (Utils.arrayShallowEqual(coord, targetable[i])) {
+          isIn = true;
+          break;
+        }
+      }
+      if (!isIn) {
+        console.warn(JSON.stringify(coord)+ " is not in the targetable coords which are: "+ JSON.stringify(targetable));
+        return null;
+      }
+      //Create path and move
+      var path = Game.Movement.move.getPath(this, coord[0], coord[1], coord[2]);
+      if (path) {
+        if (onStart) {
+          onStart();
+        }
+        path.pop(); //the last coord is the actual position
+        console.log("Follow path: "+JSON.stringify(path));
+        var that = this;
+        var cbk = function() {
+          if (path.length === 0) {
+            if (onFinish) {
+              onFinish();
+            }
+          }
+          if (path.length !== 0) {
+            Game.Movement.move.go(that, path.pop(), cbk);
+          }
+        };
+        Game.Movement.move.go(this, path.pop(), cbk);
+        return true;
+      }
+    }
+  },
+  getTargetable:function() {
+    return Game.Movement.move.getMovableTiles(this, this.c.movement.currentPoints);
+    // var targetable = Game.Movement[mvtType].walk.getMovable(this, this.c.movement.currentPoints);
+    // return targetable;
+  }
+};
 // ECS.Systems.move = {
 //   dependency: ["position", "associatedZone"],
 //   callbacks: {},
@@ -130,8 +184,10 @@ ECS.Systems.uiControled = {
   callbacks: {"clickOnTerrain": "click"},
   entityCallbacks: {},
   click: function(coord) {
-    //check what is clicked on to know what do do:move, talk, action,...
     var voxCoord = Game.Graphics.getVoxPosFromAbsPos([1, 1, 1], coord[0], coord[1], coord[2]);
+    this.s.move.execute(voxCoord);
+    /*
+    //check what is clicked on to know what do do:move, talk, action,...
     var uids = this.c.associatedZone.c.container.get(voxCoord[0], voxCoord[1], voxCoord[2]);
     if (!uids || uids.length === 0) {
       if (this.s.walk) {
@@ -156,6 +212,7 @@ ECS.Systems.uiControled = {
       //   }
       // }
     }
+    */
   }
 };
 

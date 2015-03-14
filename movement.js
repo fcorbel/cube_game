@@ -1,6 +1,148 @@
 var Game = Game || {};
 Game.Movement = Game.Movement || {};
 
+Game.Movement.move = {
+    go: function(ent, voxCoord, cbk) {
+    console.log("go to: "+JSON.stringify(voxCoord));
+    if (!ent.c.movement.infiniteMvt) {
+      ent.c.movement.currentPoints -= 1;
+    }
+    Game.Movement.goToVox(ent, voxCoord[0], voxCoord[1], voxCoord[2], 50, cbk);
+  },
+  getPath: function(ent, x, y, z) {
+    // Implementation of the A* algorithm
+    var path = [];
+    
+    var zone = ent.c.associatedZone;
+    var map = zone.c.container;
+    var goal = [x, y, z];
+    var current, neighbours, next, priority;
+
+    var heuristic = function(a, b) {
+      // Manhattan distance on a square grid
+      return Math.abs(a[0] - b[0]) + Math.abs(a[2] - b[2]);
+    };
+
+    var frontier = new PriorityQueue({comparator: function(a, b) {
+      return a.prio - b.prio;
+    }});
+    var cameFrom = {};
+    var costSoFar = {};
+    var startString = JSON.stringify(ent.c.position.vox);
+    frontier.queue({val: ent.c.position.vox, valStr: startString, prio: 0});
+    cameFrom[startString] = true;
+    costSoFar[startString] = 0;
+    
+    while (frontier.length !== 0) {
+      current = frontier.dequeue();
+      if (Utils.arrayShallowEqual(current.val, goal)) {
+        break;
+      }
+      neighbours = this.getMovableNeighbours(ent.uid, ent.c.size, ent.c.canBeAt, current.val[0], current.val[1], current.val[2], zone);
+      for (var i=0; i<neighbours.length; i++) {
+        next = neighbours[i];
+        var nextString = JSON.stringify(next);
+        var newCost = costSoFar[current.valStr] + 1; //so far mvt cost is always 1
+        if (!cameFrom[nextString] || newCost < costSoFar[nextString]) {
+          costSoFar[nextString] = newCost;
+          priority = newCost + heuristic(goal, next);
+          frontier.queue({val: next, valStr: nextString, prio: priority});
+          cameFrom[nextString] = current.val;
+        }
+      }
+    }
+
+    if (cameFrom[JSON.stringify(goal)] === undefined) {
+      console.debug("Couldn't find a path to: "+goal); //TODO try to go the closest
+      return null;
+    }
+    //Construct path
+    current = goal;
+    path.push(current);
+    while (!Utils.arrayShallowEqual(current, ent.c.position.vox)) {
+      current = cameFrom[JSON.stringify(current)];
+      path.push(current);
+    }
+    return path;
+  },
+  getMovableTiles: function(ent, mvtNumber) {
+    var zone = ent.c.associatedZone;
+    var map = zone.c.container;
+
+    var result = [];
+    var frontier = [ent.c.position.vox];
+    var startString = JSON.stringify(frontier[0]);
+    var visited = {};
+    visited[startString] = true;
+    var costSoFar = {};
+    costSoFar[startString] = 0;
+
+    while (frontier.length !== 0) {
+      var current = frontier.shift();
+      var currentString = JSON.stringify(current);
+      if (costSoFar[currentString] >= mvtNumber) {
+        continue;
+      }
+      var neighbours = this.getMovableNeighbours(ent.uid, ent.c.size, ent.c.canBeAt, current[0], current[1], current[2], zone);
+      for (var i=0; i<neighbours.length; i++) {
+        var next = neighbours[i];
+        var nextString = JSON.stringify(next);
+        var newCost = costSoFar[currentString] + 1;
+        if (!visited[nextString]) {
+          frontier.push(next);
+          visited[nextString] = true;
+          costSoFar[nextString] = newCost;
+          result.push(next);
+        }
+      }
+    }
+    return result;
+  },
+  getMovableNeighbours: function(uid, size, canBeList, x, y, z, zone) {
+    var result = [];
+    var canBeAtFunction = zone.s.physicsRules.canBeAt;
+    //right
+    if (canBeAtFunction(uid, size, canBeList, x+1, y, z)) {
+      result.push([x+1, y, z]);
+    }
+    //left
+    if (canBeAtFunction(uid, size, canBeList, x-1, y, z)) {
+      result.push([x-1, y, z]);
+    }
+    //up
+    if (canBeAtFunction(uid, size, canBeList, x, y, z-1)) {
+      result.push([x, y, z-1]);
+    }
+    //down
+    if (canBeAtFunction(uid, size, canBeList, x, y, z+1)) {
+      result.push([x, y, z+1]);
+    }
+    return result;
+  },
+    // canMoveTo: function(ent, fromY, x, z, zone, map) {
+    //   //check same level
+    //   if (this.canStandAt(ent, x, fromY, z, zone, map)) {
+    //     return fromY;
+    //   }
+    //   //check other levels
+    //   var lvl = Math.floor((ent.c.size[1]/2) - 0.1);
+    //   for (var i=1; i<=lvl; i++) {
+    //     //check up
+    //     if (this.canStandAt(ent, x, fromY+i, z, zone, map)) {
+    //       return fromY+i;
+    //     }
+    //     //check down
+    //     if (this.canStandAt(ent, x, fromY-i, z, zone, map)) {
+    //       return fromY-i;
+    //     }
+    //   }
+    //   // console.log("Nope, can't go there or climb from: "+fromY+" TO: "+x+","+z);
+    //   return null;
+    // },
+};
+
+
+
 Game.Movement.tile = {
   //walking, with tiles movements
   walk: {
@@ -175,7 +317,7 @@ Game.Movement.free = {
 
 Game.Movement.goToVox = function(ent, x, y, z, speed, cbk) {
     // console.log(ent.name+" will try to go to: "+x+","+y+","+z);
-    if (ent.c.associatedZone.s.physicsRules.canBeAt(ent.uid, ent.c.size, ent.c.consistence, x, y, z)) {
+    if (ent.c.associatedZone.s.physicsRules.canBeAt(ent.uid, ent.c.size, ent.c.canBeAt, x, y, z)) {
       var currPos = ent.c.position.vox;
       var newPos = [x, y, z];
       ent.send("moved", currPos, newPos); //updates stored in zone
