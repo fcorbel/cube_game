@@ -63,6 +63,10 @@ ECS.Components.container = function() {
   return null;
 };
 
+ECS.Components.chunksContainer = function() {
+  return {};
+};
+
 ECS.Components.entitiesList = function() {
   return {};
 };

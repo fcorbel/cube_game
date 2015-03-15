@@ -16,6 +16,21 @@ ECS.Systems = ECS.Systems || {};
 // };
 // 
 
+ECS.Systems.chunksManager = {
+  dependency: ["chunksContainer"],
+  callbacks: {},
+  entityCallbacks: {},
+  init: function() {
+    
+  },
+  addChunk: function(x, y, z, data) {
+
+  },
+  clean: function() {
+
+  }
+};
+
 ECS.Systems.dataLoader = {
   //Load elements in the map
   //Manage entities like player, ennemies,...

@@ -200,12 +200,13 @@ ECS.Entities.Tpl.worldZone = {
   name: "worldZone",
   comp: {
     container: true,
+    chunksContainer: true,
     entitiesList: true,
     appearance:true,
     worldZoneGUI: true,
     physicsRules: true
   },
-  sys: ["dataLoader", "drawZone", "sunLighting", "physicsRules", "worldZoneGUI"]
+  sys: ["dataLoader", "chunksManager", "drawZone", "sunLighting", "physicsRules", "worldZoneGUI"]
 };
 
 ECS.Entities.Tpl.combatZone = {
