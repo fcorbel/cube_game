@@ -56,24 +56,32 @@ Game.States.createWorld = function() {
   var sceneInfos = Game.Graphics.createScene();
   var camera = Game.Graphics.createCamera(state.em);
   var pointer = Game.createPointer(state.em, camera.threejsCam);
-  //Zone
+  // Zone
   state.zone = Factories.fac.create("worldZone", state.em);
   state.zone.c.appearance.scene = sceneInfos.scene;
+  state.zone.c.size = [100, 1, 100];
+  state.zone.c.container = Tools.Containers.create3dContainer(100, 1, 100, null);
+  // Chunks
+  state.zone.s.chunksManager.addChunk(0, 0, 0);
+  state.zone.s.chunksManager.activateChunk(0, 0, 0);
+
   // state.zone.s.dataLoader.loadOcean(5, 2, 5);
-  state.zone.s.dataLoader.loadIsland(5, 3, 5);
+  // state.zone.s.dataLoader.loadIsland(5, 3, 5);
 
   // Entities
-  var player = Factories.fac.create("defaultBoat", state.em);
+  var player = Factories.fac.create("testEnt", state.em);
   player.c.appearance.scene = sceneInfos.scene;
-  state.zone.s.dataLoader.addEntity(player, 0, 1, 0);
-  ECS.Entities.addSystem(player, "uiControled");
+  player.c.associatedZone = state.zone;
+  // state.zone.s.dataLoader.addEntity(player, 0, 1, 0);
+  // ECS.Entities.addSystem(player, "uiControled");
 
   //////////////////
   // Specific to world state
   //////////////////
   state.zone.initSystems();
+  player.initSystems();
 
-  camera.focusPoint = player.c.position.abs;
+  // camera.focusPoint = player.c.position.abs;
 
   var domEl = document.getElementById("screen");
   domEl.appendChild(sceneInfos.renderer.domElement);

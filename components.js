@@ -63,8 +63,10 @@ ECS.Components.container = function() {
   return null;
 };
 
-ECS.Components.chunksContainer = function() {
-  return {};
+ECS.Components.chunksManager = function() {
+  return {
+    chunkSize: [5,5,5]
+  };
 };
 
 ECS.Components.entitiesList = function() {

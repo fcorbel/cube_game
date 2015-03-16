@@ -3,6 +3,9 @@ ECS.Entities = ECS.Entities || {};
 
 ECS.Entities.Tpl = {};
 
+///////////////////////////
+// Zones
+///////////////////////////
 ECS.Entities.Tpl.defaultZone = {
   type: "zone",
   name: "defaultZone",
@@ -14,20 +17,6 @@ ECS.Entities.Tpl.defaultZone = {
     physicsRules: true
   },
   sys: ["dataLoader", "drawZone", "sunLighting", "physicsRules", "defaultZoneGUI"]
-};
-
-ECS.Entities.Tpl.worldZone = {
-  type: "zone",
-  name: "worldZone",
-  comp: {
-    container: true,
-    chunksManager: true,
-    entitiesList: true,
-    appearance:true,
-    worldZoneGUI: true,
-    physicsRules: true
-  },
-  sys: ["dataLoader", "chunksManager", "drawZone", "sunLighting", "physicsRules", "worldZoneGUI"]
 };
 
 ECS.Entities.Tpl.combatZone = {
@@ -44,6 +33,40 @@ ECS.Entities.Tpl.combatZone = {
   sys: ["dataLoader", "drawZone", "sunLighting", "physicsRules", "combatZoneGUI", "combatZoneRules"]
 };
 
+ECS.Entities.Tpl.worldZone = {
+  type: "zone",
+  name: "worldZone",
+  comp: {
+    container: true,
+    size: true,
+    chunksManager: true,
+    // entitiesList: true,
+    appearance:true,
+    worldZoneGUI: true,
+    physicsRules: true
+  },
+  sys: ["dataLoader", "chunksManager", "sunLighting", "physicsRules", "worldZoneGUI"]
+};
+
+///////////////////////////
+// Chunk
+///////////////////////////
+ECS.Entities.Tpl.defaultChunk = {
+  type: "chunk",
+  name: "defaultChunk",
+  comp: {
+    position: true,
+    container: true,
+    entitiesList: true,
+    appearance:true,
+    associatedZone: true
+  },
+  sys: [/* "chunkDataLoader" , */"drawChunk"]
+};
+
+///////////////////////////
+// Terrain
+///////////////////////////
 ECS.Entities.Tpl.water = {
   type: "terrain",
   name: "water",
@@ -58,7 +81,7 @@ ECS.Entities.Tpl.water = {
     position: true,
     associatedZone: true
   },
-  sys: ["storedInZoneContainer"]
+  sys: ["storedInZoneContainer", "drawEntity"]
 };
 
 ECS.Entities.Tpl.earth = {
@@ -93,6 +116,9 @@ ECS.Entities.Tpl.grass = {
   sys: ["storedInZoneContainer"]
 };
 
+///////////////////////////
+// Living
+///////////////////////////
 ECS.Entities.Tpl.averageGuy = {
   type: "living",
   name: "averageGuy",
@@ -143,7 +169,24 @@ ECS.Entities.Tpl.defaultBoat = {
     position: true,
     associatedZone: true,
     movement: true,
-    floating: true
   },
   sys: ["storedInZoneContainer", "drawEntity", "move"]
+};
+
+
+ECS.Entities.Tpl.testEnt = {
+  type: "living",
+  name: "testEnt",
+  comp: {
+    appearance: {
+      meshName: "SpecialGuy",
+    },
+    consistence: 1,
+    weight: 4,
+    size: [1, 1, 1],
+    position: true,
+    associatedZone: true,
+    movement: true,
+  },
+  sys: ["storedInChunks", "drawEntity", "move"]
 };
